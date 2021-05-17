@@ -26,6 +26,8 @@ So for instance, many banks would have one domain to show off their current acco
 
 ## Results
 
+Generated at {{generation_timestamp.isoformat()}}
+
 {% for country_data in source.countries_data.values() %}
 # {{country_data.country_name}}
 
