@@ -5,4 +5,7 @@
 aiodns
 click
 click_log
+google-cloud-storage
+jinja2
+pycmarkgfm
 pycountry
