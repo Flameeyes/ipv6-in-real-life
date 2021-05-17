@@ -70,10 +70,16 @@ class Category:
         self.entities.append(entity)
 
     @property
+    def ready_count(self) -> int:
+        return sum(1 for entity in self.entities if entity.ipv6_ready)
+
+    @property
+    def total_count(self) -> int:
+        return len(self.entities)
+
+    @property
     def ready_percentage(self) -> str:
-        ready_ratio = sum(1 for entity in self.entities if entity.ipv6_ready) / len(
-            self.entities
-        )
+        ready_ratio = self.ready_count / self.total_count
         return f"{ready_ratio:.0%}"
 
 

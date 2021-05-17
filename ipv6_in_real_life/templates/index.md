@@ -31,10 +31,10 @@ Generated at {{generation_timestamp.isoformat()}}
 {% for country_data in source.countries_data.values() %}
 # {{country_data.country_name}}
 
-| Category | IPv6 Ready (%) |
+| Category | IPv6 Ready |
 | --- | --- |
 {%- for category in country_data.categories.values() %}
-| {{category.category}} | {{category.ready_percentage}} |
+| {{category.category}} | {{category.ready_percentage}} ({{category.ready_count}} / {{category.total_count}}) |
 {%- endfor %}
 
 {% endfor %}
