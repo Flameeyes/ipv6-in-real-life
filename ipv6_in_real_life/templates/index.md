@@ -26,7 +26,7 @@ So for instance, many banks would have one domain to show off their current acco
 
 ## Results
 
-{% for country_data in categorized %}
+{% for country_data in source.countries_data.values() %}
 # {{country_data.country_name}}
 
 | Category | IPv6 Ready (%) |
