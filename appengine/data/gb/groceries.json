@@ -1,0 +1,39 @@
+[
+    {
+        "country": "gb",
+        "category": "groceries",
+        "main_host": "www.sainsbury.co.uk",
+        "additional_hosts": [
+            "account.sainsburys.co.uk"
+        ]
+    },
+    {
+        "country": "gb",
+        "category": "groceries",
+        "main_host": "www.waitrose.com"
+    },
+    {
+        "country": "gb",
+        "category": "groceries",
+        "main_host": "www.ocado.com",
+        "additional_hosts": [
+            "accounts.ocado.com"
+        ]
+    },
+    {
+        "country": "gb",
+        "category": "groceries",
+        "main_host": "www.tesco.com",
+        "additional_hosts": [
+            "secure.tesco.com"
+        ]
+    },
+    {
+        "country": "gb",
+        "category": "groceries",
+        "main_host": "www.morrisons.com",
+        "additional_hosts": [
+            "groceries.morrisons.com"
+        ]
+    }
+]

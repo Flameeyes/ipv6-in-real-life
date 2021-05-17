@@ -1,0 +1,50 @@
+[
+    {
+        "country": "gb",
+        "category": "bank",
+        "main_host": "www.santander.co.uk",
+        "additional_hosts": [
+            "retail.santander.co.uk"
+        ]
+    },
+    {
+        "country": "gb",
+        "category": "bank",
+        "main_host": "www.natwest.com",
+        "additional_hosts": [
+            "www.onlinebanking.natwest.com"
+        ]
+    },
+    {
+        "country": "gb",
+        "category": "bank",
+        "main_host": "www.ulsterbank.co.uk",
+        "additional_hosts": [
+            "www.anytimebanking.ulsterbank.co.uk"
+        ]
+    },
+    {
+        "country": "gb",
+        "category": "bank",
+        "main_host": "www.nutmeg.com",
+        "additional_hosts": [
+            "login.nutmeg.com"
+        ]
+    },
+    {
+        "country": "gb",
+        "category": "bank",
+        "main_host": "www.metrobankonline.co.uk",
+        "additional_hosts": [
+            "personal.metrobankonline.co.uk"
+        ]
+    },
+    {
+        "country": "gb",
+        "category": "bank",
+        "main_host": "www.tescobank.com",
+        "additional_hosts": [
+            "identity.tescobank.com"
+        ]
+    }
+]

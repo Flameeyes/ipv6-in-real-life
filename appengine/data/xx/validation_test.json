@@ -1,0 +1,11 @@
+[
+    {
+        "country": "xx",
+        "category": "validation_test",
+        "main_host": "www.facebook.com",
+        "additional_hosts": [
+            "www.whatsapp.com",
+            "www.instagram.com"
+        ]
+    }
+]

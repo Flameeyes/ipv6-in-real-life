@@ -1,0 +1,41 @@
+[
+    {
+        "country": "gb",
+        "category": "telco",
+        "main_host": "www.o2.co.uk",
+        "additional_hosts": [
+            "accounts.o2.co.uk"
+        ]
+    },
+    {
+        "country": "gb",
+        "category": "telco",
+        "main_host": "www.vodafone.co.uk"
+    },
+    {
+        "country": "gb",
+        "category": "telco",
+        "main_host": "www.virginmedia.com",
+        "additional_hosts": [
+            "oauth.virginmedia.com"
+        ]
+    },
+    {
+        "country": "gb",
+        "category": "telco",
+        "main_host": "www.bt.com",
+        "additional_hosts": [
+            "home.bt.com"
+        ]
+    },
+    {
+        "country": "gb",
+        "category": "telco",
+        "main_host": "www.aa.net.uk"
+    },
+    {
+        "country": "gb",
+        "category": "telco",
+        "main_host": "www.hyperoptic.com"
+    }
+]
