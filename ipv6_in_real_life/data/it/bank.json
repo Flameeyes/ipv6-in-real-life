@@ -1,17 +1,11 @@
 [
     {
-        "country": "it",
-        "category": "bank",
         "main_host": "www.intesasanpaolo.com"
     },
     {
-        "country": "it",
-        "category": "bank",
         "main_host": "www.sella.it"
     },
     {
-        "country": "it",
-        "category": "bank",
         "main_host": "www.unicredit.it",
         "additional_hosts": [
             "content.unicredit.it"

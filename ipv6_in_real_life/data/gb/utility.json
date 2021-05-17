@@ -1,0 +1,8 @@
+[
+    {
+        "main_host": "so.energy",
+        "additional_hosts": [
+            "account.so.energy"
+        ]
+    }
+]

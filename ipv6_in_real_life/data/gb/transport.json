@@ -1,35 +1,23 @@
 [
     {
-        "country": "gb",
-        "category": "transport",
         "main_host": "www.tfl.gov.uk",
         "additional_hosts": [
             "contactless.tfl.gov.uk"
         ]
     },
     {
-        "country": "gb",
-        "category": "transport",
         "main_host": "www.nationalrail.co.uk"
     },
     {
-        "country": "gb",
-        "category": "transport",
         "main_host": "www.southernrailway.com"
     },
     {
-        "country": "gb",
-        "category": "transport",
         "main_host": "www.southwesternrailway.com"
     },
     {
-        "country": "gb",
-        "category": "transport",
         "main_host": "www.wmnetwork.co.uk"
     },
     {
-        "country": "gb",
-        "category": "transport",
         "main_host": "www.scotrail.co.uk"
     }
 ]

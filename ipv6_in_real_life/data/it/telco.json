@@ -1,27 +1,19 @@
 [
     {
-        "country": "it",
-        "category": "telco",
         "main_host": "www.tim.it",
         "additional_hosts": [
             "auth.tim.it"
         ]
     },
     {
-        "country": "it",
-        "category": "telco",
         "main_host": "www.wind.it",
         "additional_hosts": []
     },
     {
-        "country": "it",
-        "category": "telco",
         "main_host": "www.tre.it",
         "additional_hosts": []
     },
     {
-        "country": "it",
-        "category": "telco",
         "main_host": "www.vodafone.it",
         "additional_hosts": []
     }
