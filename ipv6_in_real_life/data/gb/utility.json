@@ -4,5 +4,17 @@
         "additional_hosts": [
             "account.so.energy"
         ]
+    },
+    {
+        "main_host": "www.britishgas.co.uk"
+    },
+    {
+        "main_host": "www.ovoenergy.com",
+        "additional_hosts": [
+            "my.ovoenergy.com"
+        ]
+    },
+    {
+        "main_host": "octopus.energy"
     }
 ]
