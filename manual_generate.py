@@ -8,10 +8,8 @@ from typing import IO, Sequence
 
 import click
 import click_log
-import jinja2
-import pycmarkgfm
 
-from ipv6_in_real_life import data_input
+from ipv6_in_real_life import data_input, render
 
 click_log.basic_config()
 
@@ -25,14 +23,7 @@ async def amain(input_files: Sequence[IO[str]], output_directory: pathlib.Path) 
 
     await source.resolve_all()
 
-    jinja_env = jinja2.Environment(loader=jinja2.PackageLoader("ipv6_in_real_life"))
-    template = jinja_env.get_template("index.md")
-
-    rendered_markdown = template.render(source=source)
-
-    (output_directory / "index.html").write_text(
-        pycmarkgfm.gfm_to_html(rendered_markdown)
-    )
+    (output_directory / "index.html").write_text(render.index(source))
 
 
 @click.command()

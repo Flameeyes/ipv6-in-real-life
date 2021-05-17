@@ -5,7 +5,9 @@
 aiodns
 click
 click_log
+flask
 google-cloud-storage
+gunicorn
 jinja2
 pycmarkgfm
 pycountry

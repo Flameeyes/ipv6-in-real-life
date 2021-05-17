@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+runtime: python39
+entrypoint: gunicorn -b :$PORT wsgi:app
