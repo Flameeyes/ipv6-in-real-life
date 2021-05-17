@@ -1,10 +1,15 @@
 [
     {
-        "main_host": "www.enel.it",
-        "additional_hosts": []
+        "main_host": "www.enel.it"
     },
     {
-        "main_host": "www.goldengas.it",
-        "additional_hosts": []
+        "main_host": "www.goldengas.it"
+    },
+    {
+        "main_host": "gruppoveritas.it",
+        "additional_hosts": [
+            "www.gruppoveritas.it",
+            "serviziweb.gruppoveritas.it"
+        ]
     }
 ]

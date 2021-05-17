@@ -25,5 +25,14 @@
         "additional_hosts": [
             "groceries.morrisons.com"
         ]
+    },
+    {
+        "main_host": "www.lidl.co.uk"
+    },
+    {
+        "main_host": "www.asda.com"
+    },
+    {
+        "main_host": "www.aldi.co.uk"
     }
 ]

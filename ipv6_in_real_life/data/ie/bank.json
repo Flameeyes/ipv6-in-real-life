@@ -1,0 +1,15 @@
+[
+    {
+        "main_host": "aib.ie",
+        "additional_hosts": [
+            "onlinebanking.aib.ie"
+        ]
+    },
+    {
+        "main_host": "www.bankofireland.com",
+        "additional_hosts": [
+            "www.365online.com",
+            "www.businessonline-boi.com"
+        ]
+    }
+]

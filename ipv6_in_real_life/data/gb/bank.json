@@ -40,5 +40,36 @@
         "additional_hosts": [
             "security.hsbc.co.uk"
         ]
+    },
+    {
+        "main_host": "www.lloydsbank.com",
+        "additional_hosts": [
+            "online.lloydsbank.co.uk"
+        ]
+    },
+    {
+        "main_host": "www.nationwide.co.uk",
+        "additional_hosts": [
+            "onlinebanking.nationwide.co.uk"
+        ]
+    },
+    {
+        "main_host": "www.halifax.co.uk",
+        "additional_hosts": [
+            "www.halifax-online.co.uk"
+        ]
+    },
+    {
+        "main_host": "www.bankofscotland.co.uk",
+        "additional_hosts": [
+            "online.bankofscotland.co.uk"
+        ]
+    },
+    {
+        "main_host": "www.bankofirelanduk.com",
+        "additional_hosts": [
+            "www.365online.com",
+            "www.businessonline-boi.com"
+        ]
     }
 ]

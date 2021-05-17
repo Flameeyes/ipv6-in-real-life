@@ -1,0 +1,17 @@
+[
+    {
+        "main_host": "www.irishrail.ie"
+    },
+    {
+        "main_host": "www.dublinbus.ie"
+    },
+    {
+        "main_host": "www.leapcard.ie",
+        "additional_hosts": [
+            "transportforireland.b2clogin.com"
+        ]
+    },
+    {
+        "main_host": "www.dublinbikes.ie"
+    }
+]
