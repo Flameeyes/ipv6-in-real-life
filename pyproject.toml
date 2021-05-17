@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[tool.black]
+line-ngth = 80
+target-version = ['py37']
+
+[tool.isort]
+line_length = 80

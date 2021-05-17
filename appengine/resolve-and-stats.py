@@ -7,18 +7,10 @@ import collections
 import dataclasses
 import importlib.resources
 import itertools
+import json
 import logging
 import pathlib
-import json
-from typing import (
-    Any,
-    Iterator,
-    IO,
-    List,
-    Mapping,
-    MutableMapping,
-    Sequence,
-)
+from typing import IO, Any, Iterator, List, Mapping, MutableMapping, Sequence
 
 import aiodns
 import click
@@ -166,7 +158,9 @@ async def amain(input_files: Sequence[IO[str]], output_directory: pathlib.Path) 
 
     rendered_markdown = template.render(categorized=categorized)
 
-    (output_directory / "index.html").write_text(pycmarkgfm.gfm_to_html(rendered_markdown))
+    (output_directory / "index.html").write_text(
+        pycmarkgfm.gfm_to_html(rendered_markdown)
+    )
 
 
 @click.command()
