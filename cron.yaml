@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+cron:
+  - description: "daily regen"
+    url: /regenerate-index
+    schedule: every 24 hours
