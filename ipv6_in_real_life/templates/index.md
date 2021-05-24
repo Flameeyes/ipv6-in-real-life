@@ -26,10 +26,10 @@ So for instance, many banks would have one domain to show off their current acco
 
 ## Results
 
-Generated at {{generation_timestamp.isoformat()}}
+Generated based on DNS resolution at {{source.last_resolved.isoformat()}}.
 
 {% for country_data in source.countries_data.values() %}
-# {{country_data.country_name}}
+### {{country_data.country_name}}
 
 | Category | IPv6 Ready |
 | --- | --- |
@@ -38,3 +38,7 @@ Generated at {{generation_timestamp.isoformat()}}
 {%- endfor %}
 
 {% endfor %}
+
+See [detailed results](details) for the list of hosts.
+
+Note that for the moment, the code and source list are not going to be available on GitHub — but if you do feel something need a correction, please reach out.

@@ -4,6 +4,7 @@
 
 import asyncio
 import dataclasses
+import datetime
 import logging
 from typing import Any, Dict, Iterable, List, Optional, Sequence
 
@@ -104,6 +105,7 @@ class CountryData:
 @dataclasses.dataclass
 class Source:
     countries_data: Dict[str, CountryData] = dataclasses.field(default_factory=dict)
+    last_resolved: Optional[datetime.datetime] = None
 
     def extend_from_json(self, json_entities: Iterable[Dict[str, Any]]) -> None:
         for json_entity in json_entities:
@@ -124,3 +126,5 @@ class Source:
                 for entity in category.entities
             )
         )
+
+        self.last_resolved = datetime.datetime.now()

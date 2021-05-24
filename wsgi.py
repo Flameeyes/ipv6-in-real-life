@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: 0BSD
 
 import asyncio
+import datetime
 
 import flask
 import google.auth.exceptions
@@ -22,21 +23,21 @@ def create_app():
     except google.auth.exceptions.DefaultCredentialsError:
         pass
 
+    def _maybe_resolve():
+        if source.last_resolved is None or (
+            datetime.datetime.now() - source.last_resolved
+        ) > datetime.timedelta(hours=12):
+            asyncio.run(source.resolve_all())
+
+    @app.route("/")
     def index():
-        asyncio.run(source.resolve_all())
+        _maybe_resolve()
         return render.index(source)
 
-    @app.route("/force-index")
-    def force_index():
-        return index()
-
-    @app.route("/regenerate-index")
-    def regenerate_index():
-        index_html = index()
-
-        index_blob.upload_from_string(index_html, content_type="text/html")
-
-        return ""
+    @app.route("/details")
+    def details():
+        _maybe_resolve()
+        return render.details(source)
 
     return app
 
