@@ -10,5 +10,11 @@
     },
     {
         "main_host": "www.lycamobile.ie"
+    },
+    {
+        "main_host": "www.eir.ie",
+        "additional_hosts": [
+            "my.eir.ie"
+        ]
     }
 ]

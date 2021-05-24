@@ -1,0 +1,15 @@
+[
+    {
+        "main_host": "www.bordgaisenergy.ie"
+    },
+    {
+        "main_host": "www.sseairtricity.com",
+        "additional_hosts": [
+            "account.sseairtricity.com",
+            "id.ossapi.sseairtricity.com"
+        ]
+    },
+    {
+        "main_host": "www.gasnetworks.ie"
+    }
+]

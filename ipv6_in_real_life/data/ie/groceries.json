@@ -13,6 +13,8 @@
     },
     {
         "main_host": "www.eurospar.ie",
-        "additional_hosts": "www.offtheshelf.ie"
+        "additional_hosts": [
+            "www.offtheshelf.ie"
+        ]
     }
 ]

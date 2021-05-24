@@ -12,7 +12,10 @@
         "main_host": "www.lidl.lt"
     },
     {
-        "main_host": "www.rimi.lt"
+        "main_host": "www.rimi.lt",
+        "additional_hosts": [
+            "login.onrimi.net"
+        ]
     },
     {
         "main_host": "aibe.lt"
