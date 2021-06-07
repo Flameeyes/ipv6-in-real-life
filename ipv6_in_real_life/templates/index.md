@@ -18,9 +18,9 @@ Finding IPv6 trackers for ISP adoption is easy (see above), and it's also very e
 Both of these types of tracking are easy to execute in bulk, becuase they don't need manual curation at all. On the other hand, I would argue they provide a much less useful picture when it comes to "daily usage".
 
 What I'm focusing on for this project, is to gather not just domains and sites, but whole services, and collect them by country.
-This has the unfortuate effect of requiring a lot more manual work, and a lot of country specific knowledge, which is why you'll find the selection fairly biased towards the countries I have first hand knowledge of.
+This has the unfortunate effect of requiring a lot more manual work, and a lot of country specific knowledge, which is why you'll find the selection fairly biased towards the countries I have first hand knowledge of.
 
-The reason why I'm gathering services togehter, is because it's not uncommon for many services to use different hostnames and hosting providers between their "showroom" website and the site that includes user management.
+The reason why I'm gathering services together, is because it's not uncommon for many services to use different hostnames and hosting providers between their "showroom" website and the site that includes user management.
 This is to be expected as, for many years now, we have been using hostnames (or domain names in some other cases) as security boundaries.
 So for instance, many banks would have one domain to show off their current account offers, which would be including scripts for analytics and similar, while a completely different domain would be used for online banking, which wouldn't be loading any of that.
 
@@ -41,4 +41,6 @@ Generated based on DNS resolution at {{source.last_resolved.isoformat()}}.
 
 See [detailed results](details) for the list of hosts.
 
-Note that for the moment, the code and source list are not going to be available on GitHub — but if you do feel something need a correction, please reach out.
+## Contributing More Data
+
+The source code and the data files of the app are released under 0BSD license and are (or will be by the end of the day) available at https://github.com/Flameeyes/ipv6-in-real-life.
