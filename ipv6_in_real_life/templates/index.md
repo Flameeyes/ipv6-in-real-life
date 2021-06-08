@@ -43,4 +43,4 @@ See [detailed results](details) for the list of hosts.
 
 ## Contributing More Data
 
-The source code and the data files of the app are released under 0BSD license and are (or will be by the end of the day) available at https://github.com/Flameeyes/ipv6-in-real-life.
+The source code and the data files of the app are released under 0BSD license and are available at https://github.com/Flameeyes/ipv6-in-real-life.
