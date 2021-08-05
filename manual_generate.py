@@ -24,6 +24,7 @@ async def amain(input_files: Sequence[IO[str]], output_directory: pathlib.Path) 
     await source.resolve_all()
 
     (output_directory / "index.html").write_text(render.index(source))
+    (output_directory / "details.html").write_text(render.details(source))
 
 
 @click.command()
