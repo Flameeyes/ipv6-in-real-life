@@ -1,6 +1,6 @@
 [
     {
-        "main_host": "www.sainsbury.co.uk",
+        "main_host": "www.sainsburys.co.uk",
         "additional_hosts": [
             "account.sainsburys.co.uk"
         ]
