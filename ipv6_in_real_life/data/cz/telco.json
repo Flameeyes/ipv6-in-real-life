@@ -1,0 +1,14 @@
+[
+    {
+        "main_host": "www.o2.cz",
+        "additional_hosts": [
+          "moje.o2.cz"
+        ]
+    },
+    {
+        "main_host": "www.vodafone.cz"
+    },
+    {
+        "main_host": "www.t-mobile.cz"
+    }
+]
