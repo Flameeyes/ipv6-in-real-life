@@ -24,6 +24,10 @@ class Host:
             all_results = await resolver.query(self.name, "AAAA")
             _LOGGER.debug(f"{self.name} resolved to {all_results!r}")
         except aiodns.error.DNSError:
+            try:
+                await resolver.query(self.name, "A")
+            except aiodns.error.DNSError:
+                _LOGGER.warning(f"{self.name} IPv4 DNS record not found either")
             self.has_ipv6_address = False
         else:
             valid_ipv6 = [
