@@ -36,10 +36,7 @@
         ]
     },
     {
-        "main_host": "www.hsbc.co.uk",
-        "additional_hosts": [
-            "security.hsbc.co.uk"
-        ]
+        "main_host": "www.hsbc.co.uk"
     },
     {
         "main_host": "www.lloydsbank.com",
