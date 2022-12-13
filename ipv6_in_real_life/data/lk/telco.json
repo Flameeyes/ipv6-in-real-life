@@ -1,0 +1,28 @@
+[
+    {
+        "main_host": "www.dialog.lk",
+        "additional_hosts": [
+            "selfcare.dialog.lk",
+            "dlg.dialog.lk"
+        ]
+    },
+    {
+        "main_host": "www.sltmobitel.lk",
+        "additional_hosts": [
+            "www.slt.lk",
+            "myslt.slt.lk",
+            "ipv6.slt.lk",
+            "myslt.slt.lk",
+            "www.mobitel.lk"
+        ]
+    },
+    {
+        "main_host": "www.airtel.lk",
+        "additional_hosts": [
+            "ipv6.airtel.lk"
+        ]
+    },
+    {
+        "main_host": "www.hutch.lk"
+    }
+]
