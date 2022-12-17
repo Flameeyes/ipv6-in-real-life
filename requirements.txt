@@ -6,8 +6,5 @@ aiodns
 click
 click_log
 cmarkgfm
-flask
-google-cloud-storage
-gunicorn
 jinja2
 pycountry
