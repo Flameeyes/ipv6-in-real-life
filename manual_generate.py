@@ -15,7 +15,6 @@ click_log.basic_config()
 
 
 async def amain(input_files: Sequence[IO[str]], output_directory: pathlib.Path) -> None:
-
     if input_files:
         source = data_input.load_input_data(input_files)
     else:
