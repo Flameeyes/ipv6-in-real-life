@@ -15,7 +15,10 @@
         "main_host": "www.vodafone.it"
     },
     {
-        "main_host": "www.lycamobile.it"
+        "main_host": "www.lycamobile.it",
+        "additional_hosts": [
+            "rm.lycamobile.it"
+        ]
     },
     {
         "main_host": "www.iliad.it"

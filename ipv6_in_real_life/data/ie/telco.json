@@ -9,7 +9,10 @@
         "main_host": "www.three.ie"
     },
     {
-        "main_host": "www.lycamobile.ie"
+        "main_host": "www.lycamobile.ie",
+        "additional_hosts": [
+            "mylyca.lycamobile.ie"
+        ]
     },
     {
         "main_host": "www.eir.ie",

@@ -27,6 +27,9 @@
         "main_host": "www.hyperoptic.com"
     },
     {
-        "main_host": "www.lycamobile.co.uk"
+        "main_host": "www.lycamobile.co.uk",
+        "additional_hosts": [
+            "mylyca.lycamobile.co.uk"
+        ]
     }
 ]
