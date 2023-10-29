@@ -6,7 +6,7 @@ SPDX-License-Identifier: 0BSD
 
 # IPv6 In Real Life
 
-Hello! My name is [Flameeyes](https://www.flameeyes.com/) and I have [strong opinions about IPv6](https://flameeyes.blog/tag/ipv6/).
+Hello! My name is [Flameeyes](https://www.flameeyes.com/) and I have [strong opinions about IPv6](https://flameeyes.blog/tag/ipv6/?mtm_campaign=ipv6inreallife).
 
 In particular, I've been arguing with many people over the years that, despite increasing adoption from the point of view of providers, there's very little interest from the point of view of end users, since outside of big tech, most of the websites people need to visit for their "daily life" do not support IPv6 at all.
 
