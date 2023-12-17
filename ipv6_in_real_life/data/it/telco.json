@@ -2,13 +2,13 @@
     {
         "main_host": "www.tim.it",
         "additional_hosts": [
-            "auth.tim.it"
+            "api.tim.it"
         ]
     },
     {
         "main_host": "www.windtre.it",
         "additional_hosts": [
-            "areaclienti.windtre.it"
+            "ac.windtre.it"
         ]
     },
     {

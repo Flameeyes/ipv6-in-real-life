@@ -1,6 +1,9 @@
 [
     {
-        "main_host": "www.litrail.lt"
+        "main_host": "www.ltglink.lt",
+        "additional_hosts": [
+            "bilietas.ltglink.lt"
+        ]
     },
     {
         "main_host": "www.traukiniobilietas.lt"

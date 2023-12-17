@@ -6,12 +6,6 @@
         ]
     },
     {
-        "main_host": "danskebank.lt",
-        "additional_hosts": [
-            "e.danskebank.lt"
-        ]
-    },
-    {
         "main_host": "www.luminor.lt",
         "additional_hosts": [
             "ib.dnb.lt"
@@ -31,9 +25,6 @@
     },
     {
         "main_host": "sb.lt",
-        "additional_hosts": [
-            "online.sb.lt"
-        ]
     },
     {
         "main_host": "www.seb.lt",
