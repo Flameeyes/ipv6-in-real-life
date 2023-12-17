@@ -5,9 +5,9 @@
 import asyncio
 import dataclasses
 import datetime
-import logging
 import json
-from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple, Union
+import logging
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Union
 
 import aiodns
 import pycountry
