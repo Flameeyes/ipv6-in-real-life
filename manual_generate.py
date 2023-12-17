@@ -14,7 +14,9 @@ from ipv6_in_real_life import data_input, render
 click_log.basic_config()
 
 
-async def amain(input_files: Sequence[IO[str]], output_directory: pathlib.Path) -> None:
+async def amain(
+    input_files: Sequence[IO[str]], output_directory: pathlib.Path, json_only: bool
+) -> None:
     if input_files:
         source = data_input.load_input_data(input_files)
     else:
@@ -22,8 +24,10 @@ async def amain(input_files: Sequence[IO[str]], output_directory: pathlib.Path) 
 
     await source.resolve_all()
 
-    (output_directory / "index.html").write_text(render.index(source))
-    (output_directory / "details.html").write_text(render.details(source))
+    (output_directory / "ipv6-in-real-life.json").write_text(source.as_json())
+    if not json_only:
+        (output_directory / "index.html").write_text(render.index(source))
+        (output_directory / "details.html").write_text(render.details(source))
 
 
 @click.command()
@@ -33,14 +37,17 @@ async def amain(input_files: Sequence[IO[str]], output_directory: pathlib.Path) 
     type=click.Path(dir_okay=True, file_okay=False, exists=True, writable=True),
     default=".",
 )
+@click.option("--json-only", type=bool, is_flag=True, default=False)
 @click.argument(
     "input-files", type=click.File("rb", encoding="utf-8"), required=False, nargs=-1
 )
-def main(input_files: Sequence[IO[str]], output_directory: str) -> None:
+def main(
+    input_files: Sequence[IO[str]], output_directory: str, json_only: bool
+) -> None:
     loop = asyncio.SelectorEventLoop()
     asyncio.set_event_loop(loop)
 
-    asyncio.run(amain(input_files, pathlib.Path(output_directory)))
+    asyncio.run(amain(input_files, pathlib.Path(output_directory), json_only))
 
 
 if __name__ == "__main__":

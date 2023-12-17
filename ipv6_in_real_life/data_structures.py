@@ -6,28 +6,35 @@ import asyncio
 import dataclasses
 import datetime
 import logging
-from typing import Any, Dict, Iterable, List, Optional, Sequence
+import json
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple, Union
 
 import aiodns
 import pycountry
 
 _LOGGER = logging.getLogger(__name__)
 
+HostJson = Dict[str, Union[bool, str, None]]
+
 
 @dataclasses.dataclass
 class Host:
     name: str
+    has_ipv4_address: Optional[bool] = None
     has_ipv6_address: Optional[bool] = None
 
     async def resolve(self, resolver: aiodns.DNSResolver) -> None:
         try:
+            await resolver.query(self.name, "A")
+            self.has_ipv4_address = True
+        except aiodns.error.DNSError:
+            _LOGGER.warning(f"{self.name} IPv4 DNS record not found either")
+            self.has_ipv4_address = False
+
+        try:
             all_results = await resolver.query(self.name, "AAAA")
             _LOGGER.debug(f"{self.name} resolved to {all_results!r}")
         except aiodns.error.DNSError:
-            try:
-                await resolver.query(self.name, "A")
-            except aiodns.error.DNSError:
-                _LOGGER.warning(f"{self.name} IPv4 DNS record not found either")
             self.has_ipv6_address = False
         else:
             valid_ipv6 = [
@@ -36,6 +43,16 @@ class Host:
                 if not result.host.startswith("::ffff:")
             ]
             self.has_ipv6_address = bool(valid_ipv6)
+
+    def as_json(self) -> HostJson:
+        return {
+            "name": self.name,
+            "has_ipv4_address": self.has_ipv4_address,
+            "has_ipv6_address": self.has_ipv6_address,
+        }
+
+
+EntityJson = Dict[str, Union[str, List[HostJson], HostJson]]
 
 
 @dataclasses.dataclass
@@ -65,6 +82,17 @@ class Entity:
             host.has_ipv6_address for host in self.additional_hosts
         )
 
+    def as_dict(
+        self,
+    ) -> EntityJson:
+        return {
+            "main_host": self.main_host.as_json(),
+            "additional_hosts": [host.as_json() for host in self.additional_hosts],
+        }
+
+
+CategoryJson = List[EntityJson]
+
 
 @dataclasses.dataclass
 class Category:
@@ -87,6 +115,12 @@ class Category:
         ready_ratio = self.ready_count / self.total_count
         return f"{ready_ratio:.0%}"
 
+    def as_json(self) -> CategoryJson:
+        return [entity.as_dict() for entity in self.entities]
+
+
+CountryDataJson = Dict[str, CategoryJson]
+
 
 @dataclasses.dataclass
 class CountryData:
@@ -104,6 +138,9 @@ class CountryData:
         if entity.category not in self.categories:
             self.categories[entity.category] = Category(entity.category)
         self.categories[entity.category].register(entity)
+
+    def as_json(self) -> CountryDataJson:
+        return {key: category.as_json() for key, category in self.categories.items()}
 
 
 @dataclasses.dataclass
@@ -132,3 +169,8 @@ class Source:
         )
 
         self.last_resolved = datetime.datetime.now()
+
+    def as_json(self) -> str:
+        return json.dumps(
+            {code: country.as_json() for code, country in self.countries_data.items()}
+        )
