@@ -8,3 +8,4 @@ click_log
 cmarkgfm
 jinja2
 pycountry
+prometheus-client

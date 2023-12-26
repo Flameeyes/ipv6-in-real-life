@@ -7,13 +7,21 @@ import itertools
 import json
 from typing import IO, Any, Dict, Iterable, Iterator, Sequence
 
-from . import data_structures
+from . import data_structures, observability
 
 
 def _source_from_json(json_data: Iterable[Dict[str, Any]]) -> data_structures.Source:
-    source = data_structures.Source()
-    source.extend_from_json(json_data)
-    return source
+    try:
+        source = data_structures.Source()
+        source.extend_from_json(json_data)
+    except Exception as e:
+        observability.Metrics.get().set_source_loaded(observability.LoadStatus.FAILED)
+        raise e
+    else:
+        observability.Metrics.get().set_source_loaded(
+            observability.LoadStatus.COMPLETED
+        )
+        return source
 
 
 def load_input_data(input_files: Sequence[IO[str]]) -> data_structures.Source:

@@ -12,6 +12,8 @@ from typing import Any, Dict, Iterable, List, Optional, Sequence, Union
 import aiodns
 import pycountry
 
+from . import observability
+
 _LOGGER = logging.getLogger(__name__)
 
 HostJson = Dict[str, Union[bool, str, None]]
@@ -29,14 +31,19 @@ class Host:
             self.has_ipv4_address = True
         except aiodns.error.DNSError:
             _LOGGER.warning(f"{self.name} IPv4 DNS record not found either")
+            observability.Metrics.get().count_ipv4_resolution_failure()
             self.has_ipv4_address = False
+        else:
+            observability.Metrics.get().count_ipv4_resolution_success()
 
         try:
             all_results = await resolver.query(self.name, "AAAA")
             _LOGGER.debug(f"{self.name} resolved to {all_results!r}")
         except aiodns.error.DNSError:
             self.has_ipv6_address = False
+            observability.Metrics.get().count_ipv6_resolution_failure()
         else:
+            observability.Metrics.get().count_ipv6_resolution_success()
             valid_ipv6 = [
                 result.host
                 for result in all_results
