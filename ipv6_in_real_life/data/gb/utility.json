@@ -11,7 +11,8 @@
     {
         "main_host": "www.ovoenergy.com",
         "additional_hosts": [
-            "my.ovoenergy.com"
+            "my.ovoenergy.com",
+            "account-activation.ovoenergy.com"
         ]
     },
     {
