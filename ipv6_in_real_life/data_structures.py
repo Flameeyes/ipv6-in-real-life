@@ -59,16 +59,20 @@ EntityJson = Dict[str, Union[str, List[HostJson], HostJson]]
 class Entity:
     country: str
     category: str
+    name: str
     main_host: Host
     additional_hosts: Sequence[Host]
     ipv6_ready: Optional[bool] = None
 
     @classmethod
     def from_json(cls, json_entity: Dict[str, Any]) -> "Entity":
+        main_host = Host(json_entity["main_host"])
+
         return cls(
             json_entity["country"],
             json_entity["category"],
-            Host(json_entity["main_host"]),
+            json_entity.get("name", main_host.name),
+            main_host,
             tuple(Host(host) for host in json_entity.get("additional_hosts", [])),
         )
 
@@ -86,6 +90,7 @@ class Entity:
         self,
     ) -> EntityJson:
         return {
+            "name": self.name,
             "main_host": self.main_host.as_json(),
             "additional_hosts": [host.as_json() for host in self.additional_hosts],
         }
