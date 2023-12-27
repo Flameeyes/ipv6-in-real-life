@@ -1,0 +1,14 @@
+[
+    {
+        "main_host": "www.lyft.com"
+    },
+    {
+        "main_host": "www.caltrain.com"
+    },
+    {
+        "main_host": "www.clippercard.com"
+    },
+    {
+        "main_host": "www.bart.gov"
+    }
+]
