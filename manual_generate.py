@@ -41,7 +41,7 @@ async def amain(
 @click.option(
     "--output-directory",
     type=click.Path(dir_okay=True, file_okay=False, exists=True, writable=True),
-    default=".",
+    default="./out",
 )
 @click.option("--json-only", type=bool, is_flag=True, default=False)
 @click.argument(
