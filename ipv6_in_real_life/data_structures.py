@@ -5,9 +5,8 @@
 import asyncio
 import dataclasses
 import datetime
-import json
 import logging
-from typing import Any, Dict, Iterable, List, Optional, Sequence, Union
+from typing import Any, Dict, Iterable, List, Optional, Sequence
 
 import aiodns
 import pycountry
@@ -15,8 +14,6 @@ import pycountry
 from . import observability
 
 _LOGGER = logging.getLogger(__name__)
-
-HostJson = Dict[str, Union[bool, str, None]]
 
 
 @dataclasses.dataclass
@@ -51,16 +48,6 @@ class Host:
             ]
             self.has_ipv6_address = bool(valid_ipv6)
 
-    def as_json(self) -> HostJson:
-        return {
-            "name": self.name,
-            "has_ipv4_address": self.has_ipv4_address,
-            "has_ipv6_address": self.has_ipv6_address,
-        }
-
-
-EntityJson = Dict[str, Union[str, List[HostJson], HostJson]]
-
 
 @dataclasses.dataclass
 class Entity:
@@ -93,18 +80,6 @@ class Entity:
             host.has_ipv6_address for host in self.additional_hosts
         )
 
-    def as_dict(
-        self,
-    ) -> EntityJson:
-        return {
-            "name": self.name,
-            "main_host": self.main_host.as_json(),
-            "additional_hosts": [host.as_json() for host in self.additional_hosts],
-        }
-
-
-CategoryJson = List[EntityJson]
-
 
 @dataclasses.dataclass
 class Category:
@@ -127,12 +102,6 @@ class Category:
         ready_ratio = self.ready_count / self.total_count
         return f"{ready_ratio:.0%}"
 
-    def as_json(self) -> CategoryJson:
-        return [entity.as_dict() for entity in self.entities]
-
-
-CountryDataJson = Dict[str, CategoryJson]
-
 
 @dataclasses.dataclass
 class CountryData:
@@ -150,9 +119,6 @@ class CountryData:
         if entity.category not in self.categories:
             self.categories[entity.category] = Category(entity.category)
         self.categories[entity.category].register(entity)
-
-    def as_json(self) -> CountryDataJson:
-        return {key: category.as_json() for key, category in self.categories.items()}
 
 
 @dataclasses.dataclass
@@ -181,8 +147,3 @@ class Source:
         )
 
         self.last_resolved = datetime.datetime.now()
-
-    def as_json(self) -> str:
-        return json.dumps(
-            {code: country.as_json() for code, country in self.countries_data.items()}
-        )

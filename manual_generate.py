@@ -9,7 +9,7 @@ from typing import IO, Sequence
 import click
 import click_log
 
-from ipv6_in_real_life import data_input, observability, render
+from ipv6_in_real_life import data_input, json, observability, render
 
 click_log.basic_config()
 
@@ -28,7 +28,9 @@ async def amain(
     await source.resolve_all()
 
     try:
-        (output_directory / "ipv6-in-real-life.json").write_text(source.as_json())
+        (output_directory / "ipv6-in-real-life.json").write_text(
+            json.generate_json(source)
+        )
         if not json_only:
             (output_directory / "index.html").write_text(render.index(source))
             (output_directory / "details.html").write_text(render.details(source))
