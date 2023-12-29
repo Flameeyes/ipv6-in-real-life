@@ -9,6 +9,7 @@ import logging
 from typing import Any, Dict, Iterable, List, Optional, Sequence
 
 import aiodns
+import pycares
 import pycountry
 
 from . import observability
@@ -26,9 +27,11 @@ class Host:
         try:
             await resolver.query(self.name, "A")
             self.has_ipv4_address = True
-        except aiodns.error.DNSError:
-            _LOGGER.warning(f"{self.name} IPv4 DNS record not found either")
-            observability.Metrics.get().count_ipv4_resolution_failure()
+        except aiodns.error.DNSError as e:
+            _LOGGER.warning(
+                "%s IPv4 DNS record not found either", self.name, exc_info=True
+            )
+            observability.Metrics.get().count_ipv4_resolution_failure(e)
             self.has_ipv4_address = False
         else:
             observability.Metrics.get().count_ipv4_resolution_success()
@@ -36,9 +39,16 @@ class Host:
         try:
             all_results = await resolver.query(self.name, "AAAA")
             _LOGGER.debug(f"{self.name} resolved to {all_results!r}")
-        except aiodns.error.DNSError:
+        except aiodns.error.DNSError as e:
             self.has_ipv6_address = False
-            observability.Metrics.get().count_ipv6_resolution_failure()
+
+            # The host has no IPv6 address at this point, but we want to
+            # log if the error is anything that does not point at a missing
+            # IPv6 host at all.
+            code, *_ = e.args
+            if pycares.errno.errorcode[code] != "ARES_ENODATA":
+                _LOGGER.warning("%s IPv6 DNS record failed", self.name, exc_info=True)
+                observability.Metrics.get().count_ipv6_resolution_failure(e)
         else:
             observability.Metrics.get().count_ipv6_resolution_success()
             valid_ipv6 = [

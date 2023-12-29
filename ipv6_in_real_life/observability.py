@@ -7,13 +7,21 @@ import pathlib
 import time
 from typing import Optional
 
+import aiodns
 import prometheus_client
+import pycares
 
 
 class LoadStatus(enum.Enum):
     NOT_STARTED = "not_started"
     COMPLETED = "completed"
     FAILED = "failed"
+
+
+def _exception_to_error(exception: aiodns.error.DNSError) -> str:
+    (code, *_) = exception.args
+
+    return pycares.errno.errorcode[code]
 
 
 class Metrics:
@@ -54,6 +62,7 @@ class Metrics:
         self._ipv4_resolution_failures = prometheus_client.Counter(
             "ipv4_resolution_failures",
             "Number of resolution failures when resolving A records",
+            ["error"],
             registry=self._registry,
         )
 
@@ -66,6 +75,7 @@ class Metrics:
         self._ipv6_resolution_failures = prometheus_client.Counter(
             "ipv6_resolution_failures",
             "Number of resolution failures when resolving AAAA records",
+            ["error"],
             registry=self._registry,
         )
 
@@ -75,14 +85,14 @@ class Metrics:
     def count_ipv4_resolution_success(self) -> None:
         self._ipv4_resolution_successes.inc()
 
-    def count_ipv4_resolution_failure(self) -> None:
-        self._ipv4_resolution_failures.inc()
+    def count_ipv4_resolution_failure(self, exception: aiodns.error.DNSError) -> None:
+        self._ipv4_resolution_failures.labels(_exception_to_error(exception)).inc()
 
     def count_ipv6_resolution_success(self) -> None:
         self._ipv6_resolution_successes.inc()
 
-    def count_ipv6_resolution_failure(self) -> None:
-        self._ipv6_resolution_failures.inc()
+    def count_ipv6_resolution_failure(self, exception: aiodns.error.DNSError) -> None:
+        self._ipv6_resolution_failures.labels(_exception_to_error(exception)).inc()
 
     def write_out(self, output: pathlib.Path) -> None:
         prometheus_client.write_to_textfile(str(output), self._registry)
