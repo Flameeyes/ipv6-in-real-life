@@ -6,6 +6,7 @@ import asyncio
 import pathlib
 from typing import IO, Sequence
 
+import aiodns
 import click
 import click_log
 
@@ -15,7 +16,10 @@ click_log.basic_config()
 
 
 async def amain(
-    input_files: Sequence[IO[str]], output_directory: pathlib.Path, json_only: bool
+    input_files: Sequence[IO[str]],
+    output_directory: pathlib.Path,
+    json_only: bool,
+    nameserver: Sequence[str],
 ) -> None:
     # Initialize the start timestamp.
     observability.Metrics.get()
@@ -25,7 +29,11 @@ async def amain(
     else:
         source = data_input.load_packaged_data()
 
-    await source.resolve_all()
+    if not nameserver:
+        nameserver = None
+
+    resolver = aiodns.DNSResolver(nameserver)
+    await source.resolve_all(resolver)
 
     try:
         (output_directory / "ipv6-in-real-life.json").write_text(
@@ -46,16 +54,22 @@ async def amain(
     default="./out",
 )
 @click.option("--json-only", type=bool, is_flag=True, default=False)
+@click.option("--nameserver", type=str, multiple=True)
 @click.argument(
     "input-files", type=click.File("rb", encoding="utf-8"), required=False, nargs=-1
 )
 def main(
-    input_files: Sequence[IO[str]], output_directory: str, json_only: bool
+    input_files: Sequence[IO[str]],
+    output_directory: str,
+    json_only: bool,
+    nameserver: Sequence[str],
 ) -> None:
     loop = asyncio.SelectorEventLoop()
     asyncio.set_event_loop(loop)
 
-    asyncio.run(amain(input_files, pathlib.Path(output_directory), json_only))
+    asyncio.run(
+        amain(input_files, pathlib.Path(output_directory), json_only, nameserver)
+    )
 
 
 if __name__ == "__main__":

@@ -144,9 +144,7 @@ class Source:
 
             self.countries_data[entity.country].register(entity)
 
-    async def resolve_all(self) -> None:
-        resolver = aiodns.DNSResolver()
-
+    async def resolve_all(self, resolver: aiodns.DNSResolver) -> None:
         await asyncio.gather(
             *(
                 entity.resolve(resolver)
