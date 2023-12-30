@@ -23,5 +23,11 @@
             "actv.avmspa.it",
             "www.veneziaunica.it"
         ]
+    },
+    {
+        "main_host": "mobilitadimarca.it"
+    },
+    {
+        "main_host": "www.autobus.it"
     }
 ]

@@ -10,5 +10,17 @@
         "additional_hosts": [
             "content.unicredit.it"
         ]
+    },
+    {
+        "main_host": "www.credit-agricole.it",
+        "additional_hosts": [
+            "nowbanking.credit-agricole.it"
+        ]
+    },
+    {
+        "main_host": "www.bancobpm.it",
+        "additional_hosts": [
+            "youweb.bancobpm.it"
+        ]
     }
 ]

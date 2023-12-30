@@ -22,5 +22,8 @@
     },
     {
         "main_host": "www.iliad.it"
+    },
+    {
+        "main_host": "www.fastweb.it"
     }
 ]
