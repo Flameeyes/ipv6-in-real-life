@@ -11,5 +11,8 @@
             "www.gruppoveritas.it",
             "serviziweb.gruppoveritas.it"
         ]
+    },
+    {
+        "main_host": "octopusenergy.it"
     }
 ]
