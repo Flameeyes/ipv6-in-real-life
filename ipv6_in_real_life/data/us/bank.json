@@ -7,5 +7,8 @@
     },
     {
         "main_host": "www.wealthfront.com"
+    },
+    {
+        "main_host": "www.acorns.com"
     }
 ]
