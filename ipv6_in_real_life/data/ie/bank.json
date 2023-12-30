@@ -11,5 +11,11 @@
             "www.365online.com",
             "www.businessonline-boi.com"
         ]
+    },
+    {
+        "main_host": "www.ptsb.ie",
+        "additional_hosts": [
+            "open24.ie"
+        ]
     }
 ]
