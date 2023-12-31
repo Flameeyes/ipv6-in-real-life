@@ -68,5 +68,11 @@
             "www.365online.com",
             "www.businessonline-boi.com"
         ]
+    },
+    {
+        "main_host": "www.tsb.co.uk",
+        "additional_hosts": [
+            "internetbanking.tsb.co.uk"
+        ]
     }
 ]
