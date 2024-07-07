@@ -31,5 +31,21 @@
         "additional_hosts": [
             "mylyca.lycamobile.co.uk"
         ]
+    },
+    {
+        "main_host": "communityfibre.co.uk",
+        "additional_hosts": [
+            "login.communityfibre.co.uk",
+            "myaccount.communityfibre.co.uk"
+        ]
+    },
+    {
+        "main_host": "heybroadband.co.uk"
+    },
+    {
+        "main_host": "www.shellenergy.co.uk",
+        "additional_hosts": [
+            "accounts.shellenergy.co.uk"
+        ]
     }
 ]

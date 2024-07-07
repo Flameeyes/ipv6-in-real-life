@@ -127,5 +127,8 @@
         "additional_hosts": [
             "myaccount.tpexpress.co.uk"
         ]
+    },
+    {
+        "main_host": "www.thetrainline.com"
     }
 ]
