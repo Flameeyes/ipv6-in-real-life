@@ -17,5 +17,12 @@
     },
     {
         "main_host": "octopus.energy"
+    },
+    {
+        "main_host": "www.thameswater.co.uk",
+        "additional_hosts": [
+            "login.thameswater.co.uk",
+            "myaccount.thameswater.co.uk"
+        ]
     }
 ]
