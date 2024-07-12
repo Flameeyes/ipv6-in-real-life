@@ -8,7 +8,7 @@
     {
         "main_host": "www.luminor.lt",
         "additional_hosts": [
-            "ib.dnb.lt"
+            "ib.luminor.lt"
         ]
     },
     {

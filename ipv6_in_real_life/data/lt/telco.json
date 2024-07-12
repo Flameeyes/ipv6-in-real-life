@@ -11,7 +11,8 @@
     {
         "main_host": "tele2.lt",
         "additional_hosts": [
-            "login.tele2.lt"
+            "mano.tele2.lt",
+            "identity.tele2.lt"
         ]
     },
     {
