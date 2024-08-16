@@ -10,3 +10,15 @@ main_host = "www.heb.com"
 
 [[groceries]]
 main_host = "www.hornbachers.com"
+
+[[groceries]]
+main_host = "www.vons.com"
+
+[[groceries]]
+main_host = "www.safeway.com"
+
+[[groceries]]
+main_host = "www.costco.com"
+additional_hosts = [
+  "signin.costco.com",
+]

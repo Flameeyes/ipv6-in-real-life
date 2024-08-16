@@ -13,3 +13,16 @@ main_host = "www.wealthfront.com"
 
 [[bank]]
 main_host = "www.acorns.com"
+
+[[bank]]
+main_host = "www.chase.com"
+additional_hosts = [
+  "secure.chase.com",
+]
+
+[[bank]]
+name = "City National Bank"
+main_host = "www.cnb.com"
+additional_hosts = [
+  "cno.cnb.com",
+]

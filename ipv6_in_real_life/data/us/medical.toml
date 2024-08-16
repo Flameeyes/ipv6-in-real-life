@@ -7,3 +7,12 @@ main_host = "www.aetna.com"
 
 [[medical]]
 main_host = "www.banderaeyecare.com"
+
+[[medical]]
+main_host = "www.cvs.com"
+
+[[medical]]
+main_host = "www.walgreens.com"
+
+[[medical]]
+main_host = "www.riteaid.com"
