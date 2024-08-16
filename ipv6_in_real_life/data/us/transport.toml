@@ -20,4 +20,6 @@ main_host = "www.bart.gov"
 
 [[transport]]
 main_host = "www.myorca.com"
-additional_hosts = ["info.myorca.com"]
+additional_hosts = [
+  "info.myorca.com",
+]

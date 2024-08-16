@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: 0BSD
 
 [tool.black]
-line-ngth = 80
-target-version = ['py37']
+line-length = 100
+target-version = ['py312']
 
 [tool.isort]
 line_length = 80

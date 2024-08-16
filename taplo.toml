@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[formatting]
+array_trailing_comma = true
+array_auto_collapse = false
+array_auto_expand = true
+column_width = 30
