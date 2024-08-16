@@ -3,8 +3,6 @@
 # SPDX-License-Identifier: 0BSD
 
 import importlib.resources
-import itertools
-import json
 import tomllib
 from typing import Any, Dict, Iterable, Iterator
 
@@ -29,17 +27,6 @@ def _source_from_input(
         return source
 
 
-def _all_json_entities_from_package() -> Iterator[Dict[str, Any]]:
-    for directory in importlib.resources.files("ipv6_in_real_life.data").glob(
-        "??"
-    ):
-        for packed_file in directory.glob("*.json"):
-            for json_entity in json.loads(packed_file.read_text()):
-                json_entity.setdefault("country", directory.name)
-                json_entity.setdefault("category", packed_file.stem)
-                yield json_entity
-
-
 def _all_toml_entities_from_package() -> Iterator[Dict[str, Any]]:
     for directory in importlib.resources.files("ipv6_in_real_life.data").glob(
         "??"
@@ -55,8 +42,4 @@ def _all_toml_entities_from_package() -> Iterator[Dict[str, Any]]:
 
 
 def load_packaged_data() -> data_structures.Source:
-    return _source_from_input(
-        itertools.chain(
-            _all_json_entities_from_package(), _all_toml_entities_from_package()
-        )
-    )
+    return _source_from_input(_all_toml_entities_from_package())
