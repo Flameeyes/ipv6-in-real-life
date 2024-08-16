@@ -6,7 +6,7 @@ import importlib.resources
 import itertools
 import json
 import tomllib
-from typing import IO, Any, Dict, Iterable, Iterator, Sequence
+from typing import Any, Dict, Iterable, Iterator
 
 from . import data_structures, observability
 
@@ -27,12 +27,6 @@ def _source_from_input(
             observability.LoadStatus.COMPLETED
         )
         return source
-
-
-def load_input_data(input_files: Sequence[IO[str]]) -> data_structures.Source:
-    return _source_from_input(
-        itertools.chain(*(json.load(input_file) for input_file in input_files))
-    )
 
 
 def _all_json_entities_from_package() -> Iterator[Dict[str, Any]]:

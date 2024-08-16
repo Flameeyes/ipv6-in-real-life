@@ -4,7 +4,7 @@
 
 import asyncio
 import pathlib
-from typing import IO, Sequence
+from typing import Sequence
 
 import aiodns
 import click
@@ -16,7 +16,6 @@ click_log.basic_config()
 
 
 async def amain(
-    input_files: Sequence[IO[str]],
     output_directory: pathlib.Path,
     json_only: bool,
     nameserver: Sequence[str],
@@ -24,10 +23,7 @@ async def amain(
     # Initialize the start timestamp.
     observability.Metrics.get()
 
-    if input_files:
-        source = data_input.load_input_data(input_files)
-    else:
-        source = data_input.load_packaged_data()
+    source = data_input.load_packaged_data()
 
     if not nameserver:
         nameserver = None
@@ -57,14 +53,7 @@ async def amain(
 )
 @click.option("--json-only", type=bool, is_flag=True, default=False)
 @click.option("--nameserver", type=str, multiple=True)
-@click.argument(
-    "input-files",
-    type=click.File("rb", encoding="utf-8"),
-    required=False,
-    nargs=-1,
-)
 def main(
-    input_files: Sequence[IO[str]],
     output_directory: str,
     json_only: bool,
     nameserver: Sequence[str],
@@ -72,11 +61,7 @@ def main(
     loop = asyncio.SelectorEventLoop()
     asyncio.set_event_loop(loop)
 
-    asyncio.run(
-        amain(
-            input_files, pathlib.Path(output_directory), json_only, nameserver
-        )
-    )
+    asyncio.run(amain(pathlib.Path(output_directory), json_only, nameserver))
 
 
 if __name__ == "__main__":
