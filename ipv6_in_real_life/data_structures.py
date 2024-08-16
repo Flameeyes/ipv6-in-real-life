@@ -71,16 +71,16 @@ class Entity:
     ipv6_ready: Optional[bool] = None
 
     @classmethod
-    def from_json(cls, json_entity: Dict[str, Any]) -> "Entity":
-        main_host = Host(json_entity["main_host"])
+    def from_input(cls, input_entity: Dict[str, Any]) -> "Entity":
+        main_host = Host(input_entity["main_host"])
 
         return cls(
-            json_entity["country"],
-            json_entity["category"],
-            json_entity.get("name", main_host.name),
+            input_entity["country"],
+            input_entity["category"],
+            input_entity.get("name", main_host.name),
             main_host,
             tuple(
-                Host(host) for host in json_entity.get("additional_hosts", [])
+                Host(host) for host in input_entity.get("additional_hosts", [])
             ),
         )
 
@@ -142,9 +142,11 @@ class Source:
     )
     last_resolved: Optional[datetime.datetime] = None
 
-    def extend_from_json(self, json_entities: Iterable[Dict[str, Any]]) -> None:
-        for json_entity in json_entities:
-            entity = Entity.from_json(json_entity)
+    def extend_from_input(
+        self, input_entities: Iterable[Dict[str, Any]]
+    ) -> None:
+        for input_entity in input_entities:
+            entity = Entity.from_input(input_entity)
             if entity.country not in self.countries_data:
                 self.countries_data[entity.country] = CountryData(
                     entity.country

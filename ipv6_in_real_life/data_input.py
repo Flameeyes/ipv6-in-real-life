@@ -16,7 +16,7 @@ def _source_from_input(
 ) -> data_structures.Source:
     try:
         source = data_structures.Source()
-        source.extend_from_json(input_data)
+        source.extend_from_input(input_data)
     except Exception as e:
         observability.Metrics.get().set_source_loaded(
             observability.LoadStatus.FAILED
