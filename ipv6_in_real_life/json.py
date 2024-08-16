@@ -32,20 +32,23 @@ def entity_to_json(entity: data_structures.Entity) -> EntityJson:
 
 
 def category_to_json(category: data_structures.Category) -> CategoryJson:
-    return [entity_to_json(entity) for entity in category.entities]
+    return [
+        entity_to_json(entity)
+        for entity in sorted(category.entities, key=lambda e: e.name)
+    ]
 
 
 def country_data_to_json(country_data: data_structures.CountryData) -> CountryDataJson:
     return {
         key: category_to_json(category)
-        for key, category in country_data.categories.items()
+        for key, category in sorted(country_data.categories.items())
     }
 
 
 def source_to_json(source: data_structures.Source) -> SourceJson:
     return {
         code: country_data_to_json(country)
-        for code, country in source.countries_data.items()
+        for code, country in sorted(source.countries_data.items())
     }
 
 
