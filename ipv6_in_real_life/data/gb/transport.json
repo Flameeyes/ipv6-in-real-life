@@ -130,5 +130,14 @@
     },
     {
         "main_host": "www.thetrainline.com"
+    },
+    {
+        "main_host": "www.spt.co.uk"
+    },
+    {
+        "main_host": "www.firstbus.co.uk"
+    },
+    {
+        "main_host": "www.arrivabus.co.uk"
     }
 ]

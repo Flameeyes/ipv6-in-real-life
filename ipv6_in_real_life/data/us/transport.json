@@ -10,5 +10,12 @@
     },
     {
         "main_host": "www.bart.gov"
+    },
+
+    {
+        "main_host": "www.myorca.com",
+        "additional_hosts": [
+            "info.myorca.com"
+        ]
     }
 ]
