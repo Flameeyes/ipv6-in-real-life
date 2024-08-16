@@ -4,12 +4,23 @@
 
 import json
 import time
-from typing import Union
+from typing import TypedDict
 
 from . import data_structures
 
-HostJson = dict[str, Union[bool, str, None]]
-EntityJson = dict[str, Union[str, list[HostJson], HostJson]]
+
+class HostJson(TypedDict):
+    name: str
+    has_ipv4_address: bool | None
+    has_ipv6_address: bool | None
+
+
+class EntityJson(TypedDict):
+    name: str
+    main_host: HostJson
+    additional_hosts: list[HostJson]
+
+
 CategoryJson = list[EntityJson]
 CountryDataJson = dict[str, CategoryJson]
 SourceJson = dict[str, CountryDataJson]
