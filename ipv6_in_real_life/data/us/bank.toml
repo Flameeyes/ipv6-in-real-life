@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2023 Alex Brandt
+#
+# SPDX-License-Identifier: 0BSD
+
+[[bank]]
+main_host = "www.wellsfargo.com"
+
+[[bank]]
+main_host = "www.betterment.com"
+
+[[bank]]
+main_host = "www.wealthfront.com"
+
+[[bank]]
+main_host = "www.acorns.com"

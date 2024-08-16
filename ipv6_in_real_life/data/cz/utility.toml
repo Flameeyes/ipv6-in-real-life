@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2022 David Zacek
+#
+# SPDX-License-Identifier: 0BSD
+
+[[utility]]
+main_host = "www.cez.cz"
+additional_hosts = [
+  "muj.cez.cz",
+]
+
+[[utility]]
+main_host = "www.ppas.cz"
+additional_hosts = [
+  "moje.ppas.cz",
+]
+
+[[utility]]
+main_host = "www.pvk.cz"
+additional_hosts = [
+  "portal.pvk.cz",
+]

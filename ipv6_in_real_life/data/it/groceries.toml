@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[groceries]]
+main_host = "www.lidl.it"
+
+[[groceries]]
+main_host = "www.despar.it"
+
+[[groceries]]
+main_host = "www.carrefour.it"
+
+[[groceries]]
+main_host = "www.conad.it"
+additional_hosts = [
+  "my.conad.it",
+]

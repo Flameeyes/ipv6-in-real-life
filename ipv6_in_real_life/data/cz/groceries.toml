@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2022 David Zacek
+#
+# SPDX-License-Identifier: 0BSD
+
+[[groceries]]
+main_host = "itesco.cz"
+additional_hosts = [
+  "nakup.itesco.cz",
+]
+
+[[groceries]]
+main_host = "www.lidl.cz"
+
+[[groceries]]
+main_host = "www.rohlik.cz"
+
+[[groceries]]
+main_host = "www.globus.cz"
+additional_hosts = [
+  "www.iglobus.cz",
+  "www.globusbonus.cz",
+]

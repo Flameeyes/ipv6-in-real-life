@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2022 David Zacek
+#
+# SPDX-License-Identifier: 0BSD
+
+[[telco]]
+main_host = "www.o2.cz"
+additional_hosts = [
+  "moje.o2.cz",
+]
+
+[[telco]]
+main_host = "www.vodafone.cz"
+
+[[telco]]
+main_host = "www.t-mobile.cz"

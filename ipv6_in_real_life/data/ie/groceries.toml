@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[groceries]]
+main_host = "www.tesco.ie"
+additional_hosts = [
+  "secure.tesco.ie",
+]
+
+[[groceries]]
+main_host = "www.lidl.ie"
+
+[[groceries]]
+main_host = "www.dunnesstores.com"
+
+[[groceries]]
+main_host = "www.eurospar.ie"
+additional_hosts = [
+  "www.offtheshelf.ie",
+]

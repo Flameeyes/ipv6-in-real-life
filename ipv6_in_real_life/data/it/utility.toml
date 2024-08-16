@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[utility]]
+main_host = "www.enel.it"
+
+[[utility]]
+main_host = "www.goldengas.it"
+
+[[utility]]
+main_host = "gruppoveritas.it"
+additional_hosts = [
+  "www.gruppoveritas.it",
+  "serviziweb.gruppoveritas.it",
+]
+
+[[utility]]
+main_host = "octopusenergy.it"

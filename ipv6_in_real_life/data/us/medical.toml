@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2023 Alex Brandt
+#
+# SPDX-License-Identifier: 0BSD
+
+[[medical]]
+main_host = "www.aetna.com"
+
+[[medical]]
+main_host = "www.banderaeyecare.com"

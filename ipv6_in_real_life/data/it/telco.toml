@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[telco]]
+main_host = "www.tim.it"
+additional_hosts = [
+  "api.tim.it",
+]
+
+[[telco]]
+main_host = "www.windtre.it"
+additional_hosts = [
+  "ac.windtre.it",
+]
+
+[[telco]]
+main_host = "www.vodafone.it"
+
+[[telco]]
+main_host = "www.lycamobile.it"
+additional_hosts = [
+  "rm.lycamobile.it",
+]
+
+[[telco]]
+main_host = "www.iliad.it"
+
+[[telco]]
+main_host = "www.fastweb.it"

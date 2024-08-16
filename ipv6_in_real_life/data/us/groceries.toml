@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2023 Alex Brandt
+#
+# SPDX-License-Identifier: 0BSD
+
+[[groceries]]
+main_host = "www.instacart.com"
+
+[[groceries]]
+main_host = "www.heb.com"
+
+[[groceries]]
+main_host = "www.hornbachers.com"

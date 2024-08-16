@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2021 Svetlana Pantelejeva
+#
+# SPDX-License-Identifier: 0BSD
+
+[[transport]]
+main_host = "www.ltglink.lt"
+additional_hosts = [
+  "bilietas.ltglink.lt",
+]
+
+[[transport]]
+main_host = "www.autobusubilietai.lt"
+
+[[transport]]
+main_host = "autobusustotis.lt"

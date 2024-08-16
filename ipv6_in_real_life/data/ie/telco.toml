@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[telco]]
+main_host = "www.virginmedia.ie"
+
+[[telco]]
+main_host = "n.vodafone.ie"
+
+[[telco]]
+main_host = "www.three.ie"
+
+[[telco]]
+main_host = "www.lycamobile.ie"
+additional_hosts = [
+  "mylyca.lycamobile.ie",
+]
+
+[[telco]]
+main_host = "www.eir.ie"
+additional_hosts = [
+  "my.eir.ie",
+]

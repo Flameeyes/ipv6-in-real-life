@@ -1,0 +1,66 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[bank]]
+main_host = "www.intesasanpaolo.com"
+
+[[bank]]
+main_host = "www.sella.it"
+
+[[bank]]
+main_host = "www.unicredit.it"
+additional_hosts = [
+  "content.unicredit.it",
+]
+
+[[bank]]
+main_host = "www.credit-agricole.it"
+additional_hosts = [
+  "nowbanking.credit-agricole.it",
+]
+
+[[bank]]
+main_host = "www.bancobpm.it"
+additional_hosts = [
+  "youweb.bancobpm.it",
+]
+
+[[bank]]
+main_host = "www.fideuramdirect.it"
+additional_hosts = [
+  "alfabeto.fideuram.it",
+]
+
+[[bank]]
+main_host = "bnl.it"
+additional_hosts = [
+  "banking.bnl.it",
+]
+
+[[bank]]
+main_host = "www.bancamediolanum.it"
+additional_hosts = [
+  "www.bmedonline.it",
+]
+
+[[bank]]
+main_host = "www.cmbanca.it"
+additional_hosts = [
+  "www.relaxbanking.it",
+]
+
+[[bank]]
+main_host = "www.ing.it"
+additional_hosts = [
+  "areariservata.ing.it",
+]
+
+[[bank]]
+main_host = "www.bbva.it"
+
+[[bank]]
+main_host = "www.bancaetica.it"
+additional_hosts = [
+  "banking.bancaetica.it",
+]

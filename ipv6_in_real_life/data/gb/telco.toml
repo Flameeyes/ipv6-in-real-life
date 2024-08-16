@@ -1,0 +1,61 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[telco]]
+main_host = "www.o2.co.uk"
+additional_hosts = [
+  "accounts.o2.co.uk",
+]
+
+[[telco]]
+main_host = "www.vodafone.co.uk"
+
+[[telco]]
+main_host = "ee.co.uk"
+additional_hosts = [
+  "auth.ee.co.uk",
+]
+
+[[telco]]
+main_host = "www.virginmedia.com"
+additional_hosts = [
+  "oauth.virginmedia.com",
+]
+
+[[telco]]
+main_host = "www.bt.com"
+additional_hosts = [
+  "home.bt.com",
+]
+
+[[telco]]
+main_host = "www.aa.net.uk"
+
+[[telco]]
+main_host = "www.hyperoptic.com"
+
+[[telco]]
+main_host = "www.lycamobile.co.uk"
+additional_hosts = [
+  "mylyca.lycamobile.co.uk",
+]
+
+[[telco]]
+main_host = "communityfibre.co.uk"
+additional_hosts = [
+  "login.communityfibre.co.uk",
+  "myaccount.communityfibre.co.uk",
+]
+
+[[telco]]
+main_host = "heybroadband.co.uk"
+
+[[telco]]
+main_host = "www.shellenergy.co.uk"
+additional_hosts = [
+  "accounts.shellenergy.co.uk",
+]
+
+[[telco]]
+main_host = "www.plus.net"

@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[bank]]
+main_host = "aib.ie"
+additional_hosts = [
+  "onlinebanking.aib.ie",
+]
+
+[[bank]]
+main_host = "www.bankofireland.com"
+additional_hosts = [
+  "www.365online.com",
+  "www.businessonline-boi.com",
+]
+
+[[bank]]
+main_host = "www.ptsb.ie"
+additional_hosts = [
+  "open24.ie",
+]

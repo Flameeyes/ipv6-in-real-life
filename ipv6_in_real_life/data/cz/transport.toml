@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2022 David Zacek
+#
+# SPDX-License-Identifier: 0BSD
+
+[[transport]]
+main_host = "www.cd.cz"
+
+[[transport]]
+main_host = "www.studentagency.cz"
+additional_hosts = [
+  "shop.regiojet.cz",
+  "novy.regiojet.cz",
+]
+
+[[transport]]
+main_host = "www.flixbus.cz"
+additional_hosts = [
+  "shop.flixbus.cz",
+]
+
+[[transport]]
+main_host = "www.rekola.cz"
+additional_hosts = [
+  "app.rekola.cz",
+]

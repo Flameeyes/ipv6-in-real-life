@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[utility]]
+main_host = "so.energy"
+additional_hosts = [
+  "account.so.energy",
+]
+
+[[utility]]
+main_host = "www.britishgas.co.uk"
+
+[[utility]]
+main_host = "www.ovoenergy.com"
+additional_hosts = [
+  "my.ovoenergy.com",
+  "account-activation.ovoenergy.com",
+]
+
+[[utility]]
+main_host = "octopus.energy"
+
+[[utility]]
+main_host = "www.thameswater.co.uk"
+additional_hosts = [
+  "login.thameswater.co.uk",
+  "myaccount.thameswater.co.uk",
+]

@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2021 Svetlana Pantelejeva
+#
+# SPDX-License-Identifier: 0BSD
+
+[[bank]]
+main_host = "www.citadele.lt"
+additional_hosts = [
+  "online.citadele.lv",
+]
+
+[[bank]]
+main_host = "www.luminor.lt"
+additional_hosts = [
+  "ib.luminor.lt",
+]
+
+[[bank]]
+main_host = "www.medbank.lt"
+additional_hosts = [
+  "ibs.medbank.lt",
+]
+
+[[bank]]
+main_host = "www.opbank.lt"
+additional_hosts = [
+  "www.op-bank.lt",
+]
+
+[[bank]]
+main_host = "sb.lt"
+
+[[bank]]
+main_host = "www.seb.lt"
+additional_hosts = [
+  "e.seb.lt",
+]
+
+[[bank]]
+main_host = "www.bigbank.lt"

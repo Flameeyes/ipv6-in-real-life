@@ -1,0 +1,78 @@
+# SPDX-FileCopyrightText: 2024 Anisse Astier
+#
+# SPDX-License-Identifier: 0BSD
+
+[[bank]]
+main_host = "www.credit-agricole.fr"
+
+[[bank]]
+main_host = "mabanque.bnpparibas"
+additional_hosts = [
+  "connexion-mabanque.bnpparibas",
+]
+
+[[bank]]
+main_host = "www.banquepopulaire.fr"
+
+[[bank]]
+main_host = "www.bred.fr"
+
+[[bank]]
+main_host = "particuliers.sg.fr"
+additional_hosts = [
+  "professionnels.sg.fr",
+]
+
+[[bank]]
+main_host = "www.creditmutuel.fr"
+
+[[bank]]
+main_host = "www.cic.fr"
+
+[[bank]]
+main_host = "www.labanquepostale.fr"
+
+[[bank]]
+main_host = "www.cmb.fr"
+additional_hosts = [
+  "mon.cmb.fr",
+  "www.cmso.com",
+  "mon.cmso.com",
+]
+
+[[bank]]
+main_host = "www.boursorama.com"
+additional_hosts = [
+  "clients.boursobank.com",
+]
+
+[[bank]]
+main_host = "www.fortuneo.fr"
+additional_hosts = [
+  "mabanque.fortuneo.fr",
+]
+
+[[bank]]
+main_host = "www.hellobank.fr"
+additional_hosts = [
+  "espace-client.hellobank.fr",
+]
+
+[[bank]]
+main_host = "www.monabanq.com"
+
+[[bank]]
+main_host = "www.bforbank.com"
+
+[[bank]]
+main_host = "qonto.com"
+additional_hosts = [
+  "app.qonto.com",
+]
+
+[[bank]]
+main_host = "memo.bank"
+additional_hosts = [
+  "client.memo.bank",
+  "aide.memo.bank",
+]

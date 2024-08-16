@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2021 Svetlana Pantelejeva
+#
+# SPDX-License-Identifier: 0BSD
+
+[[telco]]
+main_host = "www.telia.lt"
+
+[[telco]]
+main_host = "www.bite.lt"
+additional_hosts = [
+  "mano.bite.lt",
+]
+
+[[telco]]
+main_host = "tele2.lt"
+additional_hosts = [
+  "mano.tele2.lt",
+  "identity.tele2.lt",
+]
+
+[[telco]]
+main_host = "www.cgates.lt"
+additional_hosts = [
+  "mano.cgates.lt",
+]
+
+[[telco]]
+main_host = "init.lt"
+
+[[telco]]
+main_host = "www.balticum.lt"

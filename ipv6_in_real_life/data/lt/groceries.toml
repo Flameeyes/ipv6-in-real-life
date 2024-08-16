@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: 2021 Svetlana Pantelejeva
+#
+# SPDX-License-Identifier: 0BSD
+
+[[groceries]]
+main_host = "iki.lt"
+
+[[groceries]]
+main_host = "www.maxima.lt"
+
+[[groceries]]
+main_host = "www.norfa.lt"
+
+[[groceries]]
+main_host = "www.lidl.lt"
+
+[[groceries]]
+main_host = "www.rimi.lt"
+additional_hosts = [
+  "login.onrimi.net",
+]
+
+[[groceries]]
+main_host = "aibe.lt"
+
+[[groceries]]
+main_host = "expressmarket.lt"
+
+[[groceries]]
+main_host = "www.ciamarket.lt"
+
+[[groceries]]
+main_host = "www.pckubas.lt"
+
+[[groceries]]
+main_host = "narvesen.lt"
+
+[[groceries]]
+main_host = "gruste.lt"
+
+[[groceries]]
+main_host = "www.vynoteka.lt"

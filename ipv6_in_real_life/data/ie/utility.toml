@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[utility]]
+main_host = "www.bordgaisenergy.ie"
+
+[[utility]]
+main_host = "www.sseairtricity.com"
+additional_hosts = [
+  "account.sseairtricity.com",
+  "id.ossapi.sseairtricity.com",
+]
+
+[[utility]]
+main_host = "www.gasnetworks.ie"

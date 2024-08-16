@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[validation_test]]
+main_host = "www.facebook.com"
+additional_hosts = [
+  "www.whatsapp.com",
+  "www.instagram.com",
+]

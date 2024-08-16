@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2023 Alex Brandt
+#
+# SPDX-License-Identifier: 0BSD
+
+[[telco]]
+main_host = "www.cableone.biz"
+
+[[telco]]
+main_host = "www.spectrum.com"
+
+[[telco]]
+main_host = "www.verizon.com"
+
+[[telco]]
+main_host = "www.xfinity.com"
+
+[[telco]]
+main_host = "www.att.com"

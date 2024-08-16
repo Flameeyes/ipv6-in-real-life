@@ -1,0 +1,79 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[bank]]
+main_host = "www.santander.co.uk"
+additional_hosts = [
+  "retail.santander.co.uk",
+]
+
+[[bank]]
+main_host = "www.natwest.com"
+additional_hosts = [
+  "www.onlinebanking.natwest.com",
+]
+
+[[bank]]
+main_host = "www.ulsterbank.co.uk"
+additional_hosts = [
+  "www.anytimebanking.ulsterbank.co.uk",
+]
+
+[[bank]]
+main_host = "www.nutmeg.com"
+additional_hosts = [
+  "login.nutmeg.com",
+]
+
+[[bank]]
+main_host = "www.metrobankonline.co.uk"
+additional_hosts = [
+  "personal.metrobankonline.co.uk",
+]
+
+[[bank]]
+main_host = "www.tescobank.com"
+additional_hosts = [
+  "identity.tescobank.com",
+]
+
+[[bank]]
+main_host = "www.hsbc.co.uk"
+
+[[bank]]
+main_host = "www.lloydsbank.com"
+additional_hosts = [
+  "online.lloydsbank.co.uk",
+]
+
+[[bank]]
+main_host = "www.nationwide.co.uk"
+additional_hosts = [
+  "onlinebanking.nationwide.co.uk",
+]
+
+[[bank]]
+main_host = "www.halifax.co.uk"
+additional_hosts = [
+  "www.halifax-online.co.uk",
+]
+
+[[bank]]
+main_host = "www.bankofscotland.co.uk"
+additional_hosts = [
+  "online.bankofscotland.co.uk",
+]
+
+[[bank]]
+main_host = "www.bankofirelanduk.com"
+additional_hosts = [
+  "www.365online.com",
+  "www.businessonline-boi.com",
+]
+
+[[bank]]
+main_host = "www.tsb.co.uk"
+additional_hosts = [
+  "internetbanking.tsb.co.uk",
+]

@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[transport]]
+main_host = "www.atm.it"
+additional_hosts = [
+  "nuovosistematariffario.atm.it",
+]
+
+[[transport]]
+main_host = "www.italotreno.it"
+additional_hosts = [
+  "biglietti.italotreno.it",
+]
+
+[[transport]]
+main_host = "www.trenitalia.com"
+additional_hosts = [
+  "www.lefrecce.it",
+]
+
+[[transport]]
+main_host = "www.actv.it"
+additional_hosts = [
+  "actv.avmspa.it",
+  "www.veneziaunica.it",
+]
+
+[[transport]]
+main_host = "mobilitadimarca.it"
+
+[[transport]]
+main_host = "www.autobus.it"

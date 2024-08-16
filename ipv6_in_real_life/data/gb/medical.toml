@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2023 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[medical]]
+main_host = "www.nhs.uk"
+additional_hosts = [
+  "www.nhsapp.service.nhs.uk",
+  "access.login.nhs.uk",
+]
+
+[[medical]]
+main_host = "www.pharmacy2u.co.uk"
+
+[[medical]]
+main_host = "www.boots.com"
+
+[[medical]]
+main_host = "www.superdrug.com"
+
+[[medical]]
+main_host = "my.patientsknowbest.com"
+
+[[medical]]
+main_host = "www.chelwest.nhs.uk"

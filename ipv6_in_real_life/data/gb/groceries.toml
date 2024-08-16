@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[groceries]]
+main_host = "www.sainsburys.co.uk"
+additional_hosts = [
+  "account.sainsburys.co.uk",
+]
+
+[[groceries]]
+main_host = "www.waitrose.com"
+
+[[groceries]]
+main_host = "www.ocado.com"
+additional_hosts = [
+  "accounts.ocado.com",
+]
+
+[[groceries]]
+main_host = "www.tesco.com"
+additional_hosts = [
+  "secure.tesco.com",
+]
+
+[[groceries]]
+main_host = "www.morrisons.com"
+additional_hosts = [
+  "groceries.morrisons.com",
+]
+
+[[groceries]]
+main_host = "www.lidl.co.uk"
+
+[[groceries]]
+main_host = "www.asda.com"
+
+[[groceries]]
+main_host = "www.aldi.co.uk"
+
+[[groceries]]
+main_host = "www.costco.co.uk"

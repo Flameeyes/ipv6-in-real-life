@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2021 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[transport]]
+main_host = "www.irishrail.ie"
+
+[[transport]]
+main_host = "www.dublinbus.ie"
+
+[[transport]]
+main_host = "www.leapcard.ie"
+additional_hosts = [
+  "transportforireland.b2clogin.com",
+]
+
+[[transport]]
+main_host = "www.dublinbikes.ie"

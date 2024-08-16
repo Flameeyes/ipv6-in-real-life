@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2021 Svetlana Pantelejeva
+#
+# SPDX-License-Identifier: 0BSD
+
+[[utility]]
+main_host = "ignitis.lt"
+additional_hosts = [
+  "e.ignitis.lt",
+]
+
+[[utility]]
+main_host = "www.elektrum.lt"
+additional_hosts = [
+  "mano.elektrum.lt",
+]
+
+[[utility]]
+main_host = "www.enefit.lt"
+
+[[utility]]
+main_host = "perlasenergija.lt"
+additional_hosts = [
+  "savitarna.perlasenergija.lt",
+]
+
+[[utility]]
+main_host = "inregnum.lt"
