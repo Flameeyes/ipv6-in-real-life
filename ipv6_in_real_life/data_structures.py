@@ -141,7 +141,7 @@ class Source:
     countries_data: dict[str, CountryData] = dataclasses.field(
         default_factory=dict
     )
-    last_resolved: datetime.datetime | None = None
+    last_resolved: datetime.datetime = datetime.datetime.min
 
     def extend_from_input(
         self, input_entities: Iterable[dict[str, Any]]
