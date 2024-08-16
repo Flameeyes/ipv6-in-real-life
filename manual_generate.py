@@ -4,7 +4,7 @@
 
 import asyncio
 import pathlib
-from typing import Sequence
+from collections.abc import Sequence
 
 import aiodns
 import click

@@ -4,15 +4,15 @@
 
 import json
 import time
-from typing import Dict, List, Union
+from typing import Union
 
 from . import data_structures
 
-HostJson = Dict[str, Union[bool, str, None]]
-EntityJson = Dict[str, Union[str, List[HostJson], HostJson]]
-CategoryJson = List[EntityJson]
-CountryDataJson = Dict[str, CategoryJson]
-SourceJson = Dict[str, CountryDataJson]
+HostJson = dict[str, Union[bool, str, None]]
+EntityJson = dict[str, Union[str, list[HostJson], HostJson]]
+CategoryJson = list[EntityJson]
+CountryDataJson = dict[str, CategoryJson]
+SourceJson = dict[str, CountryDataJson]
 
 
 def host_to_json(host: data_structures.Host) -> HostJson:

@@ -6,7 +6,8 @@ import asyncio
 import dataclasses
 import datetime
 import logging
-from typing import Any, Dict, Iterable, List, Optional, Sequence
+from collections.abc import Iterable, Sequence
+from typing import Any
 
 import aiodns
 import pycares
@@ -20,8 +21,8 @@ _LOGGER = logging.getLogger(__name__)
 @dataclasses.dataclass
 class Host:
     name: str
-    has_ipv4_address: Optional[bool] = None
-    has_ipv6_address: Optional[bool] = None
+    has_ipv4_address: bool | None = None
+    has_ipv6_address: bool | None = None
 
     async def resolve(self, resolver: aiodns.DNSResolver) -> None:
         try:
@@ -68,10 +69,10 @@ class Entity:
     name: str
     main_host: Host
     additional_hosts: Sequence[Host]
-    ipv6_ready: Optional[bool] = None
+    ipv6_ready: bool | None = None
 
     @classmethod
-    def from_input(cls, input_entity: Dict[str, Any]) -> "Entity":
+    def from_input(cls, input_entity: dict[str, Any]) -> "Entity":
         main_host = Host(input_entity["main_host"])
 
         return cls(
@@ -98,7 +99,7 @@ class Entity:
 @dataclasses.dataclass
 class Category:
     category: str
-    entities: List[Entity] = dataclasses.field(default_factory=list)
+    entities: list[Entity] = dataclasses.field(default_factory=list)
 
     def register(self, entity: Entity):
         self.entities.append(entity)
@@ -120,7 +121,7 @@ class Category:
 @dataclasses.dataclass
 class CountryData:
     country_code: str
-    categories: Dict[str, Category] = dataclasses.field(default_factory=dict)
+    categories: dict[str, Category] = dataclasses.field(default_factory=dict)
 
     @property
     def country_name(self):
@@ -137,13 +138,13 @@ class CountryData:
 
 @dataclasses.dataclass
 class Source:
-    countries_data: Dict[str, CountryData] = dataclasses.field(
+    countries_data: dict[str, CountryData] = dataclasses.field(
         default_factory=dict
     )
-    last_resolved: Optional[datetime.datetime] = None
+    last_resolved: datetime.datetime | None = None
 
     def extend_from_input(
-        self, input_entities: Iterable[Dict[str, Any]]
+        self, input_entities: Iterable[dict[str, Any]]
     ) -> None:
         for input_entity in input_entities:
             entity = Entity.from_input(input_entity)
