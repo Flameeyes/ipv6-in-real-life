@@ -5,15 +5,16 @@
 import importlib.resources
 import itertools
 import json
+import tomllib
 from typing import IO, Any, Dict, Iterable, Iterator, Sequence
 
 from . import data_structures, observability
 
 
-def _source_from_json(json_data: Iterable[Dict[str, Any]]) -> data_structures.Source:
+def _source_from_input(input_data: Iterable[Dict[str, Any]]) -> data_structures.Source:
     try:
         source = data_structures.Source()
-        source.extend_from_json(json_data)
+        source.extend_from_json(input_data)
     except Exception as e:
         observability.Metrics.get().set_source_loaded(observability.LoadStatus.FAILED)
         raise e
@@ -25,7 +26,7 @@ def _source_from_json(json_data: Iterable[Dict[str, Any]]) -> data_structures.So
 
 
 def load_input_data(input_files: Sequence[IO[str]]) -> data_structures.Source:
-    return _source_from_json(
+    return _source_from_input(
         itertools.chain(*(json.load(input_file) for input_file in input_files))
     )
 
@@ -39,5 +40,19 @@ def _all_json_entities_from_package() -> Iterator[Dict[str, Any]]:
                 yield json_entity
 
 
+def _all_toml_entities_from_package() -> Iterator[Dict[str, Any]]:
+    for directory in importlib.resources.files("ipv6_in_real_life.data").glob("??"):
+        for packed_file in directory.glob("*.toml"):
+            for category, entities in tomllib.loads(packed_file.read_text()).items():
+                for toml_entity in entities:
+                    toml_entity.setdefault("country", directory.name)
+                    toml_entity.setdefault("category", category)
+                    yield toml_entity
+
+
 def load_packaged_data() -> data_structures.Source:
-    return _source_from_json(_all_json_entities_from_package())
+    return _source_from_input(
+        itertools.chain(
+            _all_json_entities_from_package(), _all_toml_entities_from_package()
+        )
+    )
