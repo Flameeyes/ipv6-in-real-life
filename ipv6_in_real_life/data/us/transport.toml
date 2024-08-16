@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2023 Alex Brandt
+#
+# SPDX-License-Identifier: 0BSD
+
+[[transport]]
+main_host = "www.lyft.com"
+
+# California
+
+[[transport]]
+main_host = "www.caltrain.com"
+
+[[transport]]
+main_host = "www.clippercard.com"
+
+[[transport]]
+main_host = "www.bart.gov"
+
+# Seattle
+
+[[transport]]
+main_host = "www.myorca.com"
+additional_hosts = ["info.myorca.com"]
