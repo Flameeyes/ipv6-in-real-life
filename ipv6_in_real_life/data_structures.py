@@ -47,7 +47,9 @@ class Host:
             # IPv6 host at all.
             code, *_ = e.args
             if pycares.errno.errorcode[code] != "ARES_ENODATA":
-                _LOGGER.warning("%s IPv6 DNS record failed", self.name, exc_info=True)
+                _LOGGER.warning(
+                    "%s IPv6 DNS record failed", self.name, exc_info=True
+                )
                 observability.Metrics.get().count_ipv6_resolution_failure(e)
         else:
             observability.Metrics.get().count_ipv6_resolution_success()
@@ -77,7 +79,9 @@ class Entity:
             json_entity["category"],
             json_entity.get("name", main_host.name),
             main_host,
-            tuple(Host(host) for host in json_entity.get("additional_hosts", [])),
+            tuple(
+                Host(host) for host in json_entity.get("additional_hosts", [])
+            ),
         )
 
     async def resolve(self, resolver: aiodns.DNSResolver) -> None:
@@ -133,14 +137,18 @@ class CountryData:
 
 @dataclasses.dataclass
 class Source:
-    countries_data: Dict[str, CountryData] = dataclasses.field(default_factory=dict)
+    countries_data: Dict[str, CountryData] = dataclasses.field(
+        default_factory=dict
+    )
     last_resolved: Optional[datetime.datetime] = None
 
     def extend_from_json(self, json_entities: Iterable[Dict[str, Any]]) -> None:
         for json_entity in json_entities:
             entity = Entity.from_json(json_entity)
             if entity.country not in self.countries_data:
-                self.countries_data[entity.country] = CountryData(entity.country)
+                self.countries_data[entity.country] = CountryData(
+                    entity.country
+                )
 
             self.countries_data[entity.country].register(entity)
 

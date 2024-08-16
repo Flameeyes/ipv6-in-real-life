@@ -11,12 +11,16 @@ from typing import IO, Any, Dict, Iterable, Iterator, Sequence
 from . import data_structures, observability
 
 
-def _source_from_input(input_data: Iterable[Dict[str, Any]]) -> data_structures.Source:
+def _source_from_input(
+    input_data: Iterable[Dict[str, Any]]
+) -> data_structures.Source:
     try:
         source = data_structures.Source()
         source.extend_from_json(input_data)
     except Exception as e:
-        observability.Metrics.get().set_source_loaded(observability.LoadStatus.FAILED)
+        observability.Metrics.get().set_source_loaded(
+            observability.LoadStatus.FAILED
+        )
         raise e
     else:
         observability.Metrics.get().set_source_loaded(
@@ -32,7 +36,9 @@ def load_input_data(input_files: Sequence[IO[str]]) -> data_structures.Source:
 
 
 def _all_json_entities_from_package() -> Iterator[Dict[str, Any]]:
-    for directory in importlib.resources.files("ipv6_in_real_life.data").glob("??"):
+    for directory in importlib.resources.files("ipv6_in_real_life.data").glob(
+        "??"
+    ):
         for packed_file in directory.glob("*.json"):
             for json_entity in json.loads(packed_file.read_text()):
                 json_entity.setdefault("country", directory.name)
@@ -41,9 +47,13 @@ def _all_json_entities_from_package() -> Iterator[Dict[str, Any]]:
 
 
 def _all_toml_entities_from_package() -> Iterator[Dict[str, Any]]:
-    for directory in importlib.resources.files("ipv6_in_real_life.data").glob("??"):
+    for directory in importlib.resources.files("ipv6_in_real_life.data").glob(
+        "??"
+    ):
         for packed_file in directory.glob("*.toml"):
-            for category, entities in tomllib.loads(packed_file.read_text()).items():
+            for category, entities in tomllib.loads(
+                packed_file.read_text()
+            ).items():
                 for toml_entity in entities:
                     toml_entity.setdefault("country", directory.name)
                     toml_entity.setdefault("category", category)

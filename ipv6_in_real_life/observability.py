@@ -85,14 +85,22 @@ class Metrics:
     def count_ipv4_resolution_success(self) -> None:
         self._ipv4_resolution_successes.inc()
 
-    def count_ipv4_resolution_failure(self, exception: aiodns.error.DNSError) -> None:
-        self._ipv4_resolution_failures.labels(_exception_to_error(exception)).inc()
+    def count_ipv4_resolution_failure(
+        self, exception: aiodns.error.DNSError
+    ) -> None:
+        self._ipv4_resolution_failures.labels(
+            _exception_to_error(exception)
+        ).inc()
 
     def count_ipv6_resolution_success(self) -> None:
         self._ipv6_resolution_successes.inc()
 
-    def count_ipv6_resolution_failure(self, exception: aiodns.error.DNSError) -> None:
-        self._ipv6_resolution_failures.labels(_exception_to_error(exception)).inc()
+    def count_ipv6_resolution_failure(
+        self, exception: aiodns.error.DNSError
+    ) -> None:
+        self._ipv6_resolution_failures.labels(
+            _exception_to_error(exception)
+        ).inc()
 
     def write_out(self, output: pathlib.Path) -> None:
         prometheus_client.write_to_textfile(str(output), self._registry)

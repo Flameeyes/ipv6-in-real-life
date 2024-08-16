@@ -27,7 +27,9 @@ def entity_to_json(entity: data_structures.Entity) -> EntityJson:
     return {
         "name": entity.name,
         "main_host": host_to_json(entity.main_host),
-        "additional_hosts": [host_to_json(host) for host in entity.additional_hosts],
+        "additional_hosts": [
+            host_to_json(host) for host in entity.additional_hosts
+        ],
     }
 
 
@@ -38,7 +40,9 @@ def category_to_json(category: data_structures.Category) -> CategoryJson:
     ]
 
 
-def country_data_to_json(country_data: data_structures.CountryData) -> CountryDataJson:
+def country_data_to_json(
+    country_data: data_structures.CountryData,
+) -> CountryDataJson:
     return {
         key: category_to_json(category)
         for key, category in sorted(country_data.categories.items())

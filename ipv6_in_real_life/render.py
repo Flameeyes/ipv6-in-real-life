@@ -9,7 +9,9 @@ from . import data_structures
 
 
 def _render(source: data_structures.Source, template: str) -> str:
-    jinja_env = jinja2.Environment(loader=jinja2.PackageLoader("ipv6_in_real_life"))
+    jinja_env = jinja2.Environment(
+        loader=jinja2.PackageLoader("ipv6_in_real_life")
+    )
     template = jinja_env.get_template(template)
 
     rendered_markdown = template.render(source=source)

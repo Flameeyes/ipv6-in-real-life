@@ -41,7 +41,9 @@ async def amain(
         )
         if not json_only:
             (output_directory / "index.html").write_text(render.index(source))
-            (output_directory / "details.html").write_text(render.details(source))
+            (output_directory / "details.html").write_text(
+                render.details(source)
+            )
     finally:
         observability.Metrics.get().write_out(output_directory / "metrics.json")
 
@@ -56,7 +58,10 @@ async def amain(
 @click.option("--json-only", type=bool, is_flag=True, default=False)
 @click.option("--nameserver", type=str, multiple=True)
 @click.argument(
-    "input-files", type=click.File("rb", encoding="utf-8"), required=False, nargs=-1
+    "input-files",
+    type=click.File("rb", encoding="utf-8"),
+    required=False,
+    nargs=-1,
 )
 def main(
     input_files: Sequence[IO[str]],
@@ -68,7 +73,9 @@ def main(
     asyncio.set_event_loop(loop)
 
     asyncio.run(
-        amain(input_files, pathlib.Path(output_directory), json_only, nameserver)
+        amain(
+            input_files, pathlib.Path(output_directory), json_only, nameserver
+        )
     )
 
 
