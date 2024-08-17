@@ -9,6 +9,7 @@ additional_hosts = [
 ]
 
 [[bank]]
+name = "Bank of Ireland"
 main_host = "www.bankofireland.com"
 additional_hosts = [
   "www.365online.com",

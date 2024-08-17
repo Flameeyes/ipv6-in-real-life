@@ -26,3 +26,25 @@ main_host = "www.cnb.com"
 additional_hosts = [
   "cno.cnb.com",
 ]
+
+[[bank]]
+name = "Charles Schwab"
+main_host = "www.schwab.com"
+additional_hosts = [
+  "client.schwab.com",
+]
+
+[[bank]]
+name = "Bank of America"
+main_host = "www.bankofamerica.com"
+additional_hosts = [
+  "promo.bankofamerica.com",
+  "secure.bankofamerica.com",
+]
+
+[[bank]]
+name = "Comerica Bank"
+main_host = "www.comerica.com"
+additional_hosts = [
+  "webbanking.comerica.com",
+]

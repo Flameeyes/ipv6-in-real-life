@@ -15,4 +15,12 @@ main_host = "www.verizon.com"
 main_host = "www.xfinity.com"
 
 [[telco]]
+name = "AT&T"
 main_host = "www.att.com"
+
+[[telco]]
+name = "T-Mobile"
+main_host = "www.t-mobile.com"
+additional_hosts = [
+  "account.t-mobile.com",
+]

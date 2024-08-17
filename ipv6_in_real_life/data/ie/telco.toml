@@ -6,7 +6,11 @@
 main_host = "www.virginmedia.ie"
 
 [[telco]]
+name = "Vodafone"
 main_host = "n.vodafone.ie"
+additional_hosts = [
+  "broadband.vodafone.ie",
+]
 
 [[telco]]
 main_host = "www.three.ie"
