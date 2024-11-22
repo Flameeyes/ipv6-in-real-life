@@ -52,10 +52,118 @@ additional_hosts = [
 main_host = "heybroadband.co.uk"
 
 [[telco]]
-main_host = "www.shellenergy.co.uk"
+main_host = "www.plus.net"
+
+[[telco]]
+# Technically an index rather than a provider, but it does matter.
+main_host = "www.openreach.com"
+
+[[telco]]
+main_host = "www.amvia.co.uk"
+
+[[telco]]
+main_host = "www.aquiss.net"
 additional_hosts = [
-  "accounts.shellenergy.co.uk",
+  "ebilling.aquiss.net",
 ]
 
 [[telco]]
-main_host = "www.plus.net"
+main_host = "www.cerberusnetworks.co.uk"
+additional_hosts = [
+  "nc2.cerberusnetworks.co.uk",
+]
+
+[[telco]]
+main_host = "broadband.yourcoop.coop"
+
+[[telco]]
+main_host = "www.cuckoo.co"
+
+[[telco]]
+main_host = "fastnet.co.uk"
+
+[[telco]]
+main_host = "fibre.net"
+
+[[telco]]
+main_host = "www.giganet.uk"
+additional_hosts = [
+  "order.giganet.uk",
+]
+
+[[telco]]
+main_host = "www.idnet.com"
+additional_hosts = [
+  "portal.idnet.com",
+]
+
+[[telco]]
+main_host = "ic.uk"
+additional_hosts = [
+  "my.ic.uk",
+]
+
+[[telco]]
+main_host = "www.lcc.digital"
+additional_hosts = [
+  "www.unlimitedhorizon.co.uk",
+  "app.phonelineplus.com",
+]
+
+[[telco]]
+main_host = "ogi.wales"
+
+[[telco]]
+main_host = "pinemedia.net"
+additional_hosts = [
+  "help.pinemedia.net",
+]
+
+[[telco]]
+main_host = "www.sky.com"
+
+[[telco]]
+main_host = "www.ghostbroadband.co.uk"
+
+[[telco]]
+main_host = "www.syscomm.co.uk"
+additional_hosts = [
+  "portal.syscomm.org",
+]
+
+[[telco]]
+main_host = "www.talktalk.co.uk"
+additional_hosts = [
+  "auth.talktalk.co.uk",
+]
+
+[[telco]]
+main_host = "www.uno.uk"
+additional_hosts = [
+  "help.uno.uk",
+]
+
+[[telco]]
+main_host = "uw.co.uk"
+additional_hosts = [
+  "account.uw.co.uk",
+]
+
+[[telco]]
+main_host = "www.vfast.co.uk"
+additional_hosts = [
+  "my.vfast.co.uk",
+  "webmail.vfast.co.uk",
+]
+
+[[telco]]
+main_host = "www.zen.co.uk"
+additional_hosts = [
+  "my-portal.zen.co.uk",
+]
+
+[[telco]]
+main_host = "www.fleurtelecom.co.uk"
+additional_hosts = [
+  "customer-portal.global4.co.uk",
+]

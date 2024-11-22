@@ -22,6 +22,12 @@ additional_hosts = [
 main_host = "octopus.energy"
 
 [[utility]]
+main_host = "uk.shellenergy.com"
+additional_hosts = [
+  "login.myaccount.uk.shellenergy.com",
+]
+
+[[utility]]
 main_host = "www.thameswater.co.uk"
 additional_hosts = [
   "login.thameswater.co.uk",
