@@ -33,3 +33,10 @@ additional_hosts = [
   "login.thameswater.co.uk",
   "myaccount.thameswater.co.uk",
 ]
+
+[[utility]]
+main_host = "www.anglianwater.co.uk"
+additional_hosts = [
+  "myaccount.anglianwater.co.uk",
+  "login.myaccount.anglianwater.co.uk",
+]
