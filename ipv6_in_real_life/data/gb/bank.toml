@@ -77,3 +77,53 @@ main_host = "www.tsb.co.uk"
 additional_hosts = [
   "internetbanking.tsb.co.uk",
 ]
+
+[[bank]]
+main_host = "uk.virginmoney.com"
+additional_hosts = [
+  "login-and-registration.ib.apps.virginmoney.com",
+  "internet-banking.ib.apps.virginmoney.com",
+  "customer-number.ib.apps.virginmoney.com",
+  "online.virginmoney.com",
+]
+
+[[bank]]
+main_host = "www.ybs.co.uk"
+additional_hosts = [
+  "online.ybs.co.uk",
+]
+
+[[bank]]
+main_host = "www.coventrybuildingsociety.co.uk"
+additional_hosts = [
+  "secure.coventrybuildingsociety.co.uk",
+]
+
+[[bank]]
+main_host = "www.skipton.co.uk"
+additional_hosts = [
+  "secure.skipton.co.uk",
+]
+
+[[bank]]
+main_host = "www.familybuildingsociety.co.uk"
+additional_hosts = [
+  "online.familybuildingsociety.co.uk",
+  "security.familybuildingsociety.co.uk",
+]
+
+[[bank]]
+main_host = "www.cambridgebs.co.uk"
+additional_hosts = [
+  "yourcambridge.cambridgebs.co.uk",
+]
+
+[[bank]]
+main_host = "www.newcastle.co.uk"
+additional_hosts = [
+  "online.newcastle.co.uk",
+  "services.newcastle.co.uk",
+]
+
+[[bank]]
+main_host = "www.thenottingham.com"
