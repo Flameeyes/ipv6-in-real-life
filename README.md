@@ -26,7 +26,7 @@ Only create a single file if there are less than 10 entries total for the countr
 
 The format of the TOML file should follow:
 
-```
+```text
 # SPDX-FileCopyrightText: 2077 YOUR NAME HERE
 #
 # SPDX-License-Identifier: 0BSD
@@ -45,8 +45,7 @@ or the authentication host. If no additional hosts are necessary, omit the field
 ## Additional Repositories
 
 The [IPv6 In Real Life] website is rendered from the frontend available at
-https://github.com/Flameeyes/ipv6-in-real-life-frontend.
-
+<https://github.com/Flameeyes/ipv6-in-real-life-frontend>.
 
 [IPv6 In Real Life]: https://ipv6-in-real.life/?mtm_campaign=social&mtm_kwd=github&mtm_cid=ipv6-in-real-life
 [Flameeyes]: https://flameeyes.blog/?mtm_campaign=social&mtm_kwd=github&mtm_cid=ipv6-in-real-life
