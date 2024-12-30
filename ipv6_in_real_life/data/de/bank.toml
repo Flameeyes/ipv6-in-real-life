@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2024 Goetz Gperisch
+#
+# SPDX-License-Identifier: 0BSD
+
+[[bank]]
+main_host = "www.dkb.de"
+additional_hosts = [
+  "banking.dkb.de",
+]
+
+[[bank]]
+main_host = "www.ing.de"
+additional_hosts = [
+  "access.ing.de",
+]
+
+
+[[bank]]
+main_host = "www.comdirect.de"
+additional_hosts = [
+  "kunde.comdirect.de",
+]
+
+[[bank]]
+main_host = "www.deutsche-bank.de"
+additional_hosts = [
+  "meine.deutsche-bank.de/",
+]
+
+[[bank]]
+main_host = "www.postbank.de"
+additional_hosts = [
+  "banking.postbank.de",
+]
+
+[[bank]]
+main_host = "traderepublic.com"
+additional_hosts = [
+  "app.traderepublic.com/",
+]
+
+[[bank]]
+main_host = "www.sparkasse.de"
+additional_hosts = [
+  "www.berliner-sparkasse.de",
+  "www.frankfurter-sparkasse.de",
+  "www.deka.de",
+
+]
