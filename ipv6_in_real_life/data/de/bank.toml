@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 Goetz Gperisch
+# SPDX-FileCopyrightText: 2024 Goetz Goerisch
 #
 # SPDX-License-Identifier: 0BSD
 
@@ -14,7 +14,6 @@ additional_hosts = [
   "access.ing.de",
 ]
 
-
 [[bank]]
 main_host = "www.comdirect.de"
 additional_hosts = [
@@ -22,9 +21,15 @@ additional_hosts = [
 ]
 
 [[bank]]
+main_host = "www.commerzbank.de"
+additional_hosts = [
+  "kunden.commerzbank.de",
+]
+
+[[bank]]
 main_host = "www.deutsche-bank.de"
 additional_hosts = [
-  "meine.deutsche-bank.de/",
+  "meine.deutsche-bank.de",
 ]
 
 [[bank]]
@@ -36,7 +41,7 @@ additional_hosts = [
 [[bank]]
 main_host = "traderepublic.com"
 additional_hosts = [
-  "app.traderepublic.com/",
+  "app.traderepublic.com",
 ]
 
 [[bank]]
@@ -45,5 +50,113 @@ additional_hosts = [
   "www.berliner-sparkasse.de",
   "www.frankfurter-sparkasse.de",
   "www.deka.de",
-
+  "www.sparkasse-koelnbonn.de",
+  "www.sskduesseldorf.de",
+  "www.f-i.de",
 ]
+
+[[bank]]
+main_host = "www.lbb.de"
+additional_hosts = [
+  "stbsk.eu.auth0.com",
+]
+
+[[bank]]
+main_host = "www.lbbw.de"
+additional_hosts = [
+  "www.bw-bank.de",
+]
+
+[[bank]]
+main_host = "ww.vr-bayernmitte.de"
+
+[[bank]]
+main_host = "www.bayernlb.de"
+additional_hosts = [
+  "clientnext.bayernlb.de",
+]
+
+[[bank]]
+main_host = "www.vr.de"
+additional_hosts = [
+  "www.volksbanking.de",
+  "www.berliner-volksbank.de",
+  "www.frankfurter-volksbank.de",
+  "www.raiba-muc-sued.de",
+  "www.muenchner-bank.de",
+  "www.rb-nr.de",
+  "www.bankhaus-rsa.de",
+  "www.vrbankeg.de",
+  "www.voba-mg.de",
+  "www.genobroker.de",
+]
+
+[[bank]]
+main_host = "www.solarisgroup.com"
+additional_hosts = [
+  "adac-banking.solarisgroup.com",
+]
+
+[[bank]]
+main_host = "n26.com"
+additional_hosts = [
+  "app.n26.com",
+]
+
+[[bank]]
+main_host = "www.tomorrow.one"
+
+[[bank]]
+main_host = "www.gls.de"
+additional_hosts = [
+  "www.gls-online-filiale.de",
+]
+
+[[bank]]
+main_host = "www.apobank.de"
+additional_hosts = [
+  "banking.apobank.de",
+]
+
+[[bank]]
+main_host = "www.dzbank.de"
+additional_hosts = [
+  "ww.dzbank-wertpapiere.de",
+]
+
+[[bank]]
+main_host = "www.triodos.de"
+additional_hosts = [
+  "www.triodos-banking.de",
+  "finanzportal.fondsdepotbank.de",
+  "impact-portfolio.triodos.de",
+]
+
+[[bank]]
+main_host = "www.ethikbank.de"
+additional_hosts = [
+  "www.ethikbank-onlinebanking.de",
+  "ethikbank.service.meininvest.de",
+  "www.genobroker.de",
+]
+
+[[bank]]
+main_host = "www.hypovereinsbank.de"
+additional_hosts = [
+  "my.hypovereinsbank.de",
+]
+
+[[bank]]
+main_host = "www.kd-bank.de"
+
+[[bank]]
+main_host = "www.pax-bank.de"
+
+[[bank]]
+main_host = "www.sparda-west.de"
+additional_hosts = [
+  "banking.sparda-west.de",
+]
+
+[[bank]]
+main_host = "www.sparda-hessen.de"
