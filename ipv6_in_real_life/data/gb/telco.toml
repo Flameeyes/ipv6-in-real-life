@@ -167,3 +167,6 @@ main_host = "www.fleurtelecom.co.uk"
 additional_hosts = [
   "customer-portal.global4.co.uk",
 ]
+
+[[telco]]
+main_host = "www.cuckoo.co"

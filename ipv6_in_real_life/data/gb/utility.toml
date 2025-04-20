@@ -40,3 +40,6 @@ additional_hosts = [
   "myaccount.anglianwater.co.uk",
   "login.myaccount.anglianwater.co.uk",
 ]
+
+[[utility]]
+main_host = "www.sainsburysenergy.com"
