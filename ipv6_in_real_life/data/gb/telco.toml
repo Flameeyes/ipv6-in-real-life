@@ -170,3 +170,9 @@ additional_hosts = [
 
 [[telco]]
 main_host = "www.cuckoo.co"
+
+[[telco]]
+main_host = "brdy.com"
+additional_hosts = [
+  "customers.brdyservice.com",
+]

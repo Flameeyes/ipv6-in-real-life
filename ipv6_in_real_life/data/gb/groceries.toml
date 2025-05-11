@@ -40,3 +40,12 @@ main_host = "www.aldi.co.uk"
 
 [[groceries]]
 main_host = "www.costco.co.uk"
+
+[[groceries]]
+main_host = "www.poundland.co.uk"
+additional_hosts = [
+  "auth-cust.poundland.co.uk",
+]
+
+[[groceries]]
+main_host = "www.iceland.co.uk"

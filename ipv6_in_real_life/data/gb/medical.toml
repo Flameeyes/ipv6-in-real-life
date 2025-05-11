@@ -23,3 +23,12 @@ main_host = "my.patientsknowbest.com"
 
 [[medical]]
 main_host = "www.chelwest.nhs.uk"
+
+[[medical]]
+main_host = "accurx.nhs.uk"
+
+[[medical]]
+main_host = "onemedicalgroup.co.uk"
+
+[[medical]]
+main_host = "www.circlehealthgroup.co.uk"
