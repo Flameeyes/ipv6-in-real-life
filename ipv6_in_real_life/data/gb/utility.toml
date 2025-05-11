@@ -43,3 +43,6 @@ additional_hosts = [
 
 [[utility]]
 main_host = "www.sainsburysenergy.com"
+
+[[utility]]
+main_host = "www.eonnext.com"
