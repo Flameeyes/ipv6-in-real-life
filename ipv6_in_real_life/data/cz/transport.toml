@@ -23,3 +23,12 @@ main_host = "www.rekola.cz"
 additional_hosts = [
   "app.rekola.cz",
 ]
+
+[[transport]]
+main_host = "www.pid.cz"
+additional_hosts = [
+  "mapa.pid.cz",
+]
+
+[[transport]]
+main_host = "www.idos.cz"

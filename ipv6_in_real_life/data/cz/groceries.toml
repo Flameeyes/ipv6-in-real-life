@@ -20,3 +20,18 @@ additional_hosts = [
   "www.iglobus.cz",
   "www.globusbonus.cz",
 ]
+
+[[groceries]]
+main_host = "www.albert.cz"
+
+[[groceries]]
+main_host = "www.kaufland.cz"
+
+[[groceries]]
+main_host = "www.billa.cz"
+additional_hosts = [
+  "shop.billa.cz",
+]
+
+[[groceries]]
+main_host = "www.penny.cz"
