@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: 2026 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[logistics]]
+main_host = "www.royalmail.com"
+additional_hosts = [
+  "send.royalmail.com",
+]
+
+[[logistics]]
+main_host = "www.dpd.co.uk"
+additional_hosts = [
+  "my.dpd.co.uk",
+  "send.dpd.co.uk",
+  "login.dpd.co.uk",
+  "dpdlocal-online.co.uk",
+]
+
+[[logistics]]
+main_host = "www.evri.com"
+additional_hosts = [
+  "hermes-df-prod.eu.auth0.com",
+]
+
+[[logistics]]
+main_host = "www.yodel.co.uk"
+
+# The following are international logistics companies, but for the
+# time being I'm going to keep these in GB since this is the country
+# with the most data.
+[[logistics]]
+main_host = "www.ups.com"
+additional_hosts = [
+  "id.ups.com",
+]
+
+[[logistics]]
+main_host = "www.dhl.com"
+additional_hosts = [
+  "mydhl.express.dhl",
+]
+
+[[logistics]]
+main_host = "fedex.com"
