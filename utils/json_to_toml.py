@@ -40,8 +40,8 @@ def main(input_files: Sequence[pathlib.Path]):
 
                 toml_out.write(f"[[{file.stem}]]\n")
                 if "name" in entry:
-                    toml_out.write(f"name = \"{entry['name']}\"\n")
-                toml_out.write(f"main_host = \"{entry['main_host']}\"\n")
+                    toml_out.write(f'name = "{entry["name"]}"\n')
+                toml_out.write(f'main_host = "{entry["main_host"]}"\n')
 
                 if "additional_hosts" in entry:
                     toml_out.write("additional_hosts = [\n")
