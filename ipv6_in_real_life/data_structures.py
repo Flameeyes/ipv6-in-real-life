@@ -19,10 +19,20 @@ _LOGGER = logging.getLogger(__name__)
 
 
 @dataclasses.dataclass
+class ResolutionFailure:
+    hostname: str
+    record_type: str
+    error: str
+
+
+@dataclasses.dataclass
 class Host:
     name: str
     has_ipv4_address: bool | None = None
     has_ipv6_address: bool | None = None
+    resolution_failures: list[ResolutionFailure] = dataclasses.field(
+        default_factory=list
+    )
 
     async def resolve(self, resolver: aiodns.DNSResolver) -> None:
         try:
@@ -32,8 +42,12 @@ class Host:
             _LOGGER.warning(
                 "%s IPv4 DNS record not found either", self.name, exc_info=True
             )
+            code, *_ = e.args
             observability.Metrics.get().count_ipv4_resolution_failure(e)
             self.has_ipv4_address = False
+            self.resolution_failures.append(
+                ResolutionFailure(self.name, "A", pycares.errno.errorcode[code])
+            )
         else:
             observability.Metrics.get().count_ipv4_resolution_success()
 
@@ -48,10 +62,11 @@ class Host:
             # IPv6 host at all.
             code, *_ = e.args
             if pycares.errno.errorcode[code] != "ARES_ENODATA":
-                _LOGGER.warning(
-                    "%s IPv6 DNS record failed", self.name, exc_info=True
-                )
+                _LOGGER.warning("%s IPv6 DNS record failed", self.name, exc_info=True)
                 observability.Metrics.get().count_ipv6_resolution_failure(e)
+                self.resolution_failures.append(
+                    ResolutionFailure(self.name, "AAAA", pycares.errno.errorcode[code])
+                )
         else:
             observability.Metrics.get().count_ipv6_resolution_success()
             valid_ipv6 = [
@@ -80,9 +95,7 @@ class Entity:
             input_entity["category"],
             input_entity.get("name", main_host.name),
             main_host,
-            tuple(
-                Host(host) for host in input_entity.get("additional_hosts", [])
-            ),
+            tuple(Host(host) for host in input_entity.get("additional_hosts", [])),
         )
 
     async def resolve(self, resolver: aiodns.DNSResolver) -> None:
@@ -138,22 +151,27 @@ class CountryData:
 
 @dataclasses.dataclass
 class Source:
-    countries_data: dict[str, CountryData] = dataclasses.field(
-        default_factory=dict
-    )
+    countries_data: dict[str, CountryData] = dataclasses.field(default_factory=dict)
     last_resolved: datetime.datetime = datetime.datetime.min
 
-    def extend_from_input(
-        self, input_entities: Iterable[dict[str, Any]]
-    ) -> None:
+    def extend_from_input(self, input_entities: Iterable[dict[str, Any]]) -> None:
         for input_entity in input_entities:
             entity = Entity.from_input(input_entity)
             if entity.country not in self.countries_data:
-                self.countries_data[entity.country] = CountryData(
-                    entity.country
-                )
+                self.countries_data[entity.country] = CountryData(entity.country)
 
             self.countries_data[entity.country].register(entity)
+
+    @property
+    def resolution_failures(self) -> list[ResolutionFailure]:
+        return [
+            failure
+            for country in self.countries_data.values()
+            for category in country.categories.values()
+            for entity in category.entities
+            for host in [entity.main_host, *entity.additional_hosts]
+            for failure in host.resolution_failures
+        ]
 
     async def resolve_all(self, resolver: aiodns.DNSResolver) -> None:
         await asyncio.gather(

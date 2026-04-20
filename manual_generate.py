@@ -35,11 +35,12 @@ async def amain(
         (output_directory / "ipv6-in-real-life.json").write_text(
             json.generate_json(source)
         )
+        (output_directory / "dns-failures.json").write_text(
+            json.generate_failures_json(source)
+        )
         if not json_only:
             (output_directory / "index.html").write_text(render.index(source))
-            (output_directory / "details.html").write_text(
-                render.details(source)
-            )
+            (output_directory / "details.html").write_text(render.details(source))
     finally:
         observability.Metrics.get().write_out(output_directory / "metrics.json")
 

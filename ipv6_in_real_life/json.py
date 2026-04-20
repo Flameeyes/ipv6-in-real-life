@@ -38,9 +38,7 @@ def entity_to_json(entity: data_structures.Entity) -> EntityJson:
     return {
         "name": entity.name,
         "main_host": host_to_json(entity.main_host),
-        "additional_hosts": [
-            host_to_json(host) for host in entity.additional_hosts
-        ],
+        "additional_hosts": [host_to_json(host) for host in entity.additional_hosts],
     }
 
 
@@ -70,4 +68,18 @@ def source_to_json(source: data_structures.Source) -> SourceJson:
 def generate_json(source: data_structures.Source) -> str:
     return json.dumps(
         {"results": source_to_json(source), "timestamp": int(time.time())}
+    )
+
+
+def generate_failures_json(source: data_structures.Source) -> str:
+    return json.dumps(
+        [
+            {
+                "hostname": f.hostname,
+                "record_type": f.record_type,
+                "error": f.error,
+            }
+            for f in source.resolution_failures
+        ],
+        indent=2,
     )
