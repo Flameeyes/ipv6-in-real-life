@@ -176,3 +176,12 @@ main_host = "brdy.com"
 additional_hosts = [
   "customers.brdyservice.com",
 ]
+
+[[telco]]
+main_host = "www.lebara.co.uk"
+
+[[telco]]
+main_host = "smarty.co.uk"
+additional_hosts = [
+  "help.smarty.co.uk",
+]

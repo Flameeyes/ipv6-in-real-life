@@ -46,3 +46,6 @@ main_host = "www.poundland.co.uk"
 
 [[groceries]]
 main_host = "www.iceland.co.uk"
+
+[[groceries]]
+main_host = "www.londis.co.uk"

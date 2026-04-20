@@ -46,3 +46,15 @@ main_host = "www.sainsburysenergy.com"
 
 [[utility]]
 main_host = "www.eonnext.com"
+
+[[utility]]
+main_host = "www.edfenergy.com"
+additional_hosts = [
+  "my.edfenergy.com",
+]
+
+[[utility]]
+main_host = "welcomeenergy.co.uk"
+additional_hosts = [
+  "welcomeenergy.mabdeck.com",
+]
