@@ -25,21 +25,3 @@ additional_hosts = [
 
 [[logistics]]
 main_host = "www.yodel.co.uk"
-
-# The following are international logistics companies, but for the
-# time being I'm going to keep these in GB since this is the country
-# with the most data.
-[[logistics]]
-main_host = "www.ups.com"
-additional_hosts = [
-  "id.ups.com",
-]
-
-[[logistics]]
-main_host = "www.dhl.com"
-additional_hosts = [
-  "mydhl.express.dhl",
-]
-
-[[logistics]]
-main_host = "fedex.com"

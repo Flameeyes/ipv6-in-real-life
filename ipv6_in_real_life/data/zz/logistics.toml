@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2026 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: 0BSD
+
+[[logistics]]
+main_host = "www.ups.com"
+additional_hosts = [
+  "id.ups.com",
+]
+
+[[logistics]]
+main_host = "www.dhl.com"
+additional_hosts = [
+  "mydhl.express.dhl",
+]
+
+[[logistics]]
+main_host = "fedex.com"
