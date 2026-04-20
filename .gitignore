@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: 0BSD
 
 venv/
+.venv/
 .vscode/
 __pycache__/
 /out/

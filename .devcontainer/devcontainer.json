@@ -7,7 +7,7 @@
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {},
-		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {}
+		"ghcr.io/devcontainers-contrib/features/uv:1": {}
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -17,7 +17,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --user -r requirements.txt",
+	"postCreateCommand": "uv sync && uv tool install prek && prek install",
 	"customizations": {
 		"vscode": {
 			"extensions": [

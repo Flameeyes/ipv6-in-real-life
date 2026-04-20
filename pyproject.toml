@@ -2,9 +2,30 @@
 #
 # SPDX-License-Identifier: 0BSD
 
-[tool.black]
-line-length = 80
-target-version = ['py312']
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.isort]
-line_length = 80
+[project]
+name = "ipv6-in-real-life"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+  "aiodns",
+  "click",
+  "click-log",
+  "cmarkgfm",
+  "jinja2",
+  "pycountry",
+  "prometheus-client",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = false

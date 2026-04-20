@@ -2,10 +2,10 @@
 #
 # SPDX-License-Identifier: 0BSD
 
-FROM python:3
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
 WORKDIR /app
 
 COPY . .
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python", "manual_generate.py"]
+RUN uv sync --no-dev
+ENTRYPOINT ["uv", "run", "python", "manual_generate.py"]
