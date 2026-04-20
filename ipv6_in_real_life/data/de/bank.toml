@@ -68,7 +68,7 @@ additional_hosts = [
 ]
 
 [[bank]]
-main_host = "ww.vr-bayernmitte.de"
+main_host = "www.vr-bayernmitte.de"
 
 [[bank]]
 main_host = "www.bayernlb.de"
@@ -120,9 +120,6 @@ additional_hosts = [
 
 [[bank]]
 main_host = "www.dzbank.de"
-additional_hosts = [
-  "ww.dzbank-wertpapiere.de",
-]
 
 [[bank]]
 main_host = "www.triodos.de"

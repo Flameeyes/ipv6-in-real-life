@@ -109,7 +109,6 @@ additional_hosts = [
 main_host = "www.familybuildingsociety.co.uk"
 additional_hosts = [
   "online.familybuildingsociety.co.uk",
-  "security.familybuildingsociety.co.uk",
 ]
 
 [[bank]]

@@ -16,12 +16,3 @@ additional_hosts = [
 
 [[utility]]
 main_host = "www.enefit.lt"
-
-[[utility]]
-main_host = "perlasenergija.lt"
-additional_hosts = [
-  "savitarna.perlasenergija.lt",
-]
-
-[[utility]]
-main_host = "inregnum.lt"
